@@ -1,0 +1,184 @@
+.dj-progress {
+  font-family: PingFangSC-Regular, PingFang SC;
+  font-weight: 400;
+  color: #2C2D2F;
+  line-height: 20px;
+  align-self:center;
+  &.dj-circle-progress {
+    display: inline-block;
+  }
+  .dj-progress-line {
+    position: relative;
+    line-height: 1;
+    // margin-right: 8px;
+    // margin-bottom: 8px;
+    font-size: 14px;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    .dj-progress-outer {
+      // success、warning、error、primary
+      // background-color: @disableBackground;
+      background-color: #F4F5F9;
+      &.mini {
+        width: 186px;
+      }
+      &.middle {
+        width: 300px;
+      }
+      &.large {
+        width: 1000px;
+      }
+      .dj-progress-inner {
+        position: relative;
+        height: 100%;
+        transition: width .5s;
+        &.primary {
+          background-color: @primaryColor;
+        }
+        &.success {
+          background-color: @successColor;
+        }
+        &.warning {
+          background-color: @warnColor;
+        }
+        &.error {
+          background-color: @errorColor;
+        }
+        .dj-progress-inner-lamp {
+          background: #fff;
+          width: 0;
+          opacity: 1;
+          animation: runningLamp 3s ease 2s infinite;
+        }
+      }
+    }
+    .dj-progress-text {
+      font-size: 14px;
+      color: #606266;
+      display: inline-block;
+      vertical-align: middle;
+      margin: 0 8px 0 6px;
+      line-height: 1;
+      .iconfont {
+        &.success {
+          color: @successColor;
+        }
+        &.warning {
+          color: @warnColor;
+        }
+        &.error {
+          color: @errorColor;
+        }
+      }
+      &.dj-progress-text-inside {
+        // word-wrap: break-word;
+        text-align: center;
+        position: absolute;
+        right: 0px;
+        top: 50%;
+        transform: translateY(-50%);
+        color: #fff;
+        font-size: 14px;
+        transition: all .5s;
+      }
+      &.dj-progress-text-inside-left {
+        left: 0;
+        width: 2em;
+        transition: all .5s;
+      }
+    }
+  }
+  .dj-progress-circle {
+    font-family: PingFangSC-Medium, PingFang SC;
+    font-weight: 500;
+    line-height: 28px;
+    display: inline-block;
+    position: relative;
+    svg {
+      preserveAspectRatio: none;
+      dominant-baseline: middle;
+      .dj-progress-circle-circle {
+        transition: all .5s;
+        transform:rotate(-90deg);
+        transform-origin: center;
+        transform-box:fill-box;
+        // success、warning、error、primary(默认)
+        &.primary {
+          stroke: @primaryColor;
+        }
+        &.success {
+          stroke: @successColor;
+        }
+        &.warning {
+          stroke: @warnColor;
+        }
+        &.error {
+          stroke: @errorColor;
+        }
+      }
+    }
+    .dj-progress-circle-text {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translateX(-50%) translateY(-50%);
+      font-size: 20px;
+    }
+  }
+  .dj-progress-dashboard {
+    font-family: PingFangSC-Medium, PingFang SC;
+    font-weight: 500;
+    line-height: 28px;
+    display: inline-block;
+    position: relative;
+    svg {
+      dominant-baseline: middle;
+      .dj-progress-dashboard-dashboard {
+        transition: all .5s;
+        transform:rotate(-233deg);
+        transform-origin: center;
+        transform-box:fill-box;
+        // success、warning、error、primary(默认)
+        &.primary {
+          stroke: @primaryColor;
+        }
+        &.success {
+          stroke: @successColor;
+        }
+        &.warning {
+          stroke: @warnColor;
+        }
+        &.error {
+          stroke: @errorColor;
+        }
+      }
+    }
+    .dj-progress-dashboard-text {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translateX(-50%) translateY(-50%);
+      font-size: 20px;
+    }
+  }
+  .dj-progress-circle-dashboard-bg {
+    stroke: @disableBackground;
+  }
+  .dj-progress-circle-dashboard-hide {
+    opacity: 0;
+    transition: all .5s;
+  }
+}
+
+
+@keyframes runningLamp{
+  30% {
+    width: 100%;
+    opacity: 0;
+  }
+  100% {
+    width: 100%;
+    opacity: 0;
+  }
+}

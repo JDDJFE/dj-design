@@ -1,0 +1,92 @@
+{
+  "name": "djweb-ui",
+  "version": "0.1.245",
+  "main": "./dist/djweb-ui.common.js",
+  "private": false,
+  "description": "到家web UI",
+  "scripts": {
+    "dev": "vue-cli-service serve",
+    "build": "vue-cli-service build --mode docs",
+    "lint": "vue-cli-service lint",
+    "build:npm": "vue-cli-service build --target lib --name djweb-ui ./packages/index.js",
+    "dev:docs": "cd jddj-docs && npm run dev2",
+    "build:docs": "cd jddj-docs/v2 && vue-cli-service build --mode docs",
+    "test": "vue-cli-service test:unit",
+    "test:unit": "vue-cli-service test:unit",
+    "test:verbose": "npx jest --verbose"
+  },
+  "files": [
+    "dist/*",
+    "*.json",
+    "*.js"
+  ],
+  "dependencies": {
+    "axios": "^1.1.3",
+    "codemirror": "^5.59.4",
+    "core-js": "^3.6.4",
+    "js-calendar": "^1.2.3",
+    "less": "^3.11.1",
+    "less-loader": "^6.1.0",
+    "raw-loader": "^4.0.2",
+    "vue": "2.6.12",
+    "vue-codemirror": "^4.0.6",
+    "vue-router": "^3.1.6",
+    "vuedraggable": "^2.24.0",
+    "wangeditor": "^4.7.15"
+  },
+  "devDependencies": {
+    "@vue/cli-plugin-babel": "~4.5.15",
+    "@vue/cli-plugin-eslint": "~4.5.15",
+    "@vue/cli-plugin-unit-jest": "~4.5.15",
+    "@vue/cli-service": "~4.5.15",
+    "@vue/test-utils": "^1.0.3",
+    "babel-eslint": "^10.1.0",
+    "copy-webpack-plugin": "^5.1.2",
+    "eslint": "^6.7.2",
+    "eslint-plugin-vue": "^6.2.2",
+    "github-markdown-css": "^4.0.0",
+    "highlight.js": "^10.0.3",
+    "vue-loader": "^15.9.2",
+    "vue-markdown-loader": "^2.4.1",
+    "vue-template-compiler": "2.6.12"
+  },
+  "eslintConfig": {
+    "root": true,
+    "env": {
+      "node": true
+    },
+    "extends": [
+      "plugin:vue/essential",
+      "eslint:recommended"
+    ],
+    "parserOptions": {
+      "parser": "babel-eslint"
+    },
+    "rules": {},
+    "overrides": [
+      {
+        "files": [
+          "**/__tests__/*.{j,t}s?(x)",
+          "**/tests/unit/**/*.spec.{j,t}s?(x)"
+        ],
+        "env": {
+          "jest": true
+        }
+      },
+      {
+        "files": [
+          "**/__tests__/*.{j,t}s?(x)",
+          "**/tests/unit/**/*.spec.{j,t}s?(x)"
+        ],
+        "env": {
+          "jest": true
+        }
+      }
+    ]
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not dead"
+  ]
+}

@@ -1,0 +1,68 @@
+.dj-color-picker {
+  display: inline-block;
+  width: @defaultWidth;
+  height: @defaultHeight;
+  vertical-align: middle;
+  .dj-input {
+    display: inline-flex;
+    outline: none;
+    width: 100%;
+    height: 100%;
+  }
+
+  .color {
+    font-size: 0;
+    width: 30px;
+    height: calc(100% - 4px);
+    margin: 0px 2px;
+    position: relative;
+    border-radius: @radiusBase;
+    overflow: hidden;
+    border: @borderBase;
+
+    input[type='color'] {
+      width: 100%;
+      height: 100%;
+      padding: 0px;
+      margin: 0px;
+      border: 0px;
+      border-radius: 0px;
+      position: absolute;
+    }
+    input[type="color"]::-webkit-color-swatch-wrapper {
+      padding: 0;
+    }
+    input[type="color"]::-webkit-color-swatch {
+      border: 0;
+      // border-radius: 0px 5px 5px 0px;
+    }
+  }
+
+  /*--------------------
+          Size
+  ---------------------*/
+  &.mini {
+    height: @miniHeight;
+    .color{
+      width: @height22;
+    }
+  }
+  &.tiny {
+    height: @smallHeight;
+    .color{
+      width: @height26;
+    }
+  }
+  &.small {
+    height: @defaultHeight;
+    .color{
+      width: 30px;
+    }
+  }
+  &.large {
+    height: @largeHeight;
+    .color{
+      width: 34px;
+    }
+  }
+}

@@ -1,0 +1,210 @@
+.dj-image {
+  position: relative;
+  display: inline-block;
+  overflow: hidden;
+
+  &:hover {
+    .dj-image-mask {
+      opacity: 1;
+    }
+  }
+
+  &.dj-image-border {
+    border: 1px solid @borderColor;
+    border-radius: 4px;
+  }
+
+  .fade-enter-active, .fade-leave-active {
+    transition: opacity .5s;
+  }
+
+  .fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
+    opacity: 0;
+  }
+}
+
+.dj-image-error {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 14px;
+  color: @disableColor;
+  vertical-align: middle;
+
+  img {
+    width: 16.67%;
+  }
+}
+
+.dj-image-error, .dj-image-placeholder {
+  background: @hoverBackground
+}
+
+.dj-image-error, .dj-image-placeholder, .dj-image-img {
+  width: 100%;
+  height: 100%
+}
+
+.dj-image-img {
+  cursor: unset;
+}
+
+.dj-image-preview {
+  cursor: pointer;
+}
+
+// ------------------------ 查看大图 ------------------------
+.dj-image-preview-wrap {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 79;
+
+  .dj-image-preview-mask {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    opacity: .5;
+    background: @black;
+  }
+
+  .dj-image-preview-operations {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    color: rgba(255, 255, 255, .85);
+    font-size: 14px;
+    line-height: 1.5715;
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 1;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: reverse;
+    -ms-flex-direction: row-reverse;
+    flex-direction: row-reverse;
+    align-items: center;
+    width: 100%;
+    background: rgba(0, 0, 0, .1);
+    pointer-events: auto;
+
+    .dj-image-preview-operations-operation {
+      margin-left: 12px;
+      padding: 12px;
+      cursor: pointer;
+    }
+  }
+
+  .dj-image-preview-switch-left, .dj-image-preview-switch-right {
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    margin-top: -22px;
+    color: rgba(255, 255, 255, .85);
+    background: rgba(0, 0, 0, .1);
+    border-radius: 50%;
+    cursor: pointer;
+    pointer-events: auto;
+  }
+
+  .dj-image-preview-switch-left {
+    left: 10px;
+  }
+
+  .dj-image-preview-switch-right {
+    right: 10px;
+  }
+
+  .dj-img-preview-wrapper {
+    /*position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;*/
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    img {
+      cursor: grab;
+    }
+  }
+}
+
+.viewer-fade-enter-active {
+  animation: viewer-fade-in .3s;
+}
+
+.viewer-fade-leave-active {
+  animation: viewer-fade-out .3s;
+}
+
+@keyframes viewer-fade-in {
+  0% {
+    transform: translate3d(0, -20px, 0);
+    opacity: 0;
+  }
+  100% {
+    transform: translate3d(0, 0, 0);
+    opacity: 1;
+  }
+}
+
+@keyframes viewer-fade-out {
+  0% {
+    transform: translate3d(0, 0, 0);
+    opacity: 1;
+  }
+  100% {
+    transform: translate3d(0, -20px, 0);
+    opacity: 0;
+  }
+}
+
+// ------------------------ 浮层 ------------------------
+.dj-image-mask {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all .3s ease;
+  opacity: 0;
+  cursor: auto;
+
+  &.dj-image-mask-cursorP {
+    cursor: pointer;
+  }
+
+  .dj-image-mask-wrapper {
+    width: 100%;
+    height: 100%;
+  }
+
+  .dj-image-mask-operation {
+    cursor: pointer;
+    color: @white;
+
+    .zoom-in {
+      font-size: 20px;
+    }
+  }
+}

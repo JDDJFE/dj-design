@@ -1,0 +1,357 @@
+&.error, .dj-form .error &, .dj-form.error &{
+  &.dj-upload,.dj-upload{
+    display: inline-block;
+    vertical-align: middle;
+    color: (@errorColor);
+    .dj-dragger{
+      background: @errorBackground;
+      border-color: (@errorBorder);
+      color: (@errorColor);
+      &:hover:not(.is-disabled){
+       border-color: (@errorBorder);
+      }
+      .iconfont{
+        color:(@errorColor)
+      }
+      .dj-upload__text{
+        color: (@errorColor);
+        a{
+          color: (@errorColor);
+          font-size: 12px;
+        }
+      }
+    }
+    .dj-button{
+      border-color:(@errorBorder);
+      color: (@errorColor);
+      background: @errorBackground;
+    }
+    ul.imglist{
+      li{
+        &:hover:not(.is-disabled):not(.noborder){
+          border-color: @errorBorder;
+        }
+      }
+    }
+    ul.imglist li.border{
+      border-color: @errorBorder;
+      background: @errorBackground;
+      .iconfont{
+        color:(@errorColor)
+      }
+    }
+  }
+}
+.dj-upload{
+  .hide{
+		display:none;
+  }
+  .dj-upload-demo{
+    >ul{
+      width:100%;
+    }
+    .draggable {
+      .dj-upload-file_name {
+        overflow: hidden; 
+        text-overflow: ellipsis; 
+        white-space: nowrap; 
+        // word-wrap: break-word;
+        padding-right: 20px
+      }
+    }
+     @keyframes moves{
+        0%{top:-10px;}
+        100%{top:0px;}
+      }
+    .dj-upload-item{
+      animation:moves .5s;
+      font-size: 14px;
+      font-family: PingFangSC-Regular, PingFang SC;
+      font-weight: 400;
+      color: @fontColor;
+      //line-height: 1.8;
+      margin-top: 5px;
+      position: relative;
+      box-sizing: border-box;
+      display:flex;
+      align-items:center;
+      width: 100%;
+      position:relative;
+      line-height: 24px;
+      border-radius: @radius2;
+      padding: 0 12px 0 8px;
+      transition: all .3s ease;
+
+
+      &.dj-upload-item-error {
+        color: @errorColor;
+
+        .linkIcon, .garbage {
+          color: @errorColor;
+        }
+      }
+
+      .linkIcon, .garbage {
+        color: @iconHoverColor;
+      }
+      .linkIcon {
+        margin-right: 8px;
+      }
+      .delete{
+        display:none;
+        position:absolute;
+        right:12px;
+      }
+      .success{
+        position:absolute;
+        right:12px;
+        color: @successColor;
+      }
+       .error{
+        position:absolute;
+        right:12px;
+         color: @errorColor;
+       }
+      &:hover{
+        cursor: pointer;
+        background:@formHoverBackground;
+        &.dj-upload-item-error{
+          background: @errorBackground;
+        }
+        .delete{
+          display:block;
+        }
+        .success,.error{
+          display:none;
+        }
+      }
+      &.line:before{
+          content: '';
+          height:1px;
+          background:@successColor;
+          animation:move .5s;
+          position:absolute;
+          left:0;
+          bottom:0;
+      }
+
+      &.dj-upload-item-error {
+        &.line:before {
+          background: @errorColor;
+        }
+      }
+      @keyframes move{
+        0%{width:0px;}
+        99%{width:100%;}
+        100%{width:0px;}
+      }
+    }
+  }
+
+  .dj-upload-draggable {
+    margin-bottom: 10px;
+    .dj-image-mask {
+      cursor: all-scroll;
+    }
+  }
+  ul.imglist{
+    display:flex;
+    .draggable{
+      display:flex;
+      flex-wrap: wrap;
+      li{
+        margin-right:10px;
+      }
+    }
+    li.border{
+      border-style:dashed;
+    }
+    li.noborder{
+      border-style:solid;
+    }
+    li{
+      border-radius: @radiusBase;
+      background: @hoverBackground;
+      cursor: pointer;
+        position: relative;
+        overflow: hidden;
+        font-size: 28px;
+        color: @iconHoverColor;
+        text-align: center;
+        border: 1px dashed @borderColor;
+      &.dj-upload-item-error{
+        background: @errorBackground;
+      }
+        &.is-disabled{
+          cursor:not-allowed;
+          opacity:0.45;
+        }
+       /* &:hover:not(.is-disabled){
+          color: #409eff;
+        }
+        &:hover:not(.is-disabled):not(.noborder){
+           border-color: #409eff;
+        }*/
+        .iconfont{
+          cursor:pointer;
+        }
+        // .reviewIcon{
+        //   background-color: rgba(0,0,0,.5);
+        //   transition: opacity .3s;
+        //    z-index:99;
+        //    label{
+        //      cursor:pointer;
+        //    }
+        //   display:none;
+        // }
+        //  &:hover:not(.is-disabled){
+        //     .reviewIcon{
+        //       display:block;
+        //       cursor: pointer;
+        //     }
+        //  }
+        &.dj-upload-imgs{
+            // display: inline-block;
+            .add{
+              position:absolute;
+            }
+            img{
+              height: 100%;
+              width: 100%;
+              //  z-index:50;
+              border-radius: @radius2;
+              overflow: hidden;
+            }
+          }
+         &.dj-upload-img{
+           display:flex;
+           justify-content: center;
+           align-items:center;
+             img{
+              height: 100%;
+              width:  100%;
+              // z-index:50;
+              border-radius: @radius2;
+              overflow: hidden;
+            }
+            .add{
+              position:absolute;
+            }
+         }
+      span{
+        width:100%;
+        position:absolute;
+        left:0;
+        top:0;
+      }
+    }
+  }
+  .dj-dragger{
+    border: 1px dashed @borderColor;
+    border-radius: @radiusBase;
+    box-sizing: border-box;
+    width: 400px;
+    height: 140px;
+    background: @hoverBackground;
+    text-align: center;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    &.is-disabled{
+      opacity:0.45;
+      cursor:not-allowed;
+    }
+    .dj-icon-upload{
+      display: block;
+      font-size: 33px;
+      color: @textColor;
+      margin: 43px 0 12px;
+
+    }
+
+    .dj-upload__text {
+      color: @secondColor;
+      text-align: center;
+      font-size: 12px;
+      font-family: PingFangSC-Regular, PingFang SC;
+      font-weight: 400;
+      line-height: 20px;
+
+      a {
+        font-size: 12px;
+        color: @focusColor;
+        &.is-disabled{
+          cursor:not-allowed;
+          opacity:0.45;
+        }
+      }
+    }
+  }
+  .modal{
+    display:flex;
+    justify-content: center;
+    align-items:center;
+  }
+
+  .dj-upload-tips {
+    font-size: @fontSizeMini;
+    color: @textColor;
+    margin-top: 4px;
+  }
+
+  .dj-upload-list {
+    max-width: 400px;
+    .dj-upload-list-item {
+      border: @borderBase;
+      border-radius: @radiusBase;
+      height: 60px;
+      display: flex;
+      align-items: center;
+      margin-top: 4px;
+      &:hover {
+        background: @hoverBackground;
+        .dj-upload-list-icon {
+          visibility: visible;
+        }
+      }
+      .dj-upload-list-img {
+        border-radius: @radiusBase;
+        margin-left: 6px;
+        min-width: 48px;
+      }
+      .dj-upload-list-font {
+        margin-left: 8px;
+        transition: color @transition-time;
+        display: flex;
+        max-width: calc(100% - 98px);
+        &:hover {
+          color: @primaryColor;
+        }
+        .dj-upload-list-font-name {
+          white-space: nowrap;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          flex: 1;
+        }
+      }
+      .dj-upload-list-slot {
+        .dj-link {
+          margin-left: 5px;
+        }
+      }
+      .dj-upload-list-icon {
+        margin: 0 12px;
+        color: @iconColor;
+        visibility: hidden;
+        cursor: pointer;
+        flex: 1;
+        &:hover {
+          color: @iconHoverColor;
+        }
+        .iconfont {
+          float: right;
+        }
+      }
+    }
+  }
+}

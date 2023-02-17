@@ -1,0 +1,369 @@
+
+
+  .dj-input {
+    display: inline-flex;
+    outline: none;
+    width: @defaultWidth;
+    height: 34px;
+    vertical-align: middle;
+    
+    .dj-input-panel {
+      position: relative;
+      display: inline-table;
+      width: 100%;
+      height: 100%;
+      outline: none;
+    }
+
+    .input {
+      width: 100%;
+      height: 100%;
+      position: relative;
+      display: table-cell;
+      vertical-align: top;
+
+      input {
+        width: 100%;
+        height: 100%;
+        display: table-cell;
+        border: @borderBase;
+        border-radius: @radiusBase;
+        padding-left: @spacing-10;
+        padding-right: @spacing-10;
+        background: @white;
+        color: @fontColor;
+        -webkit-transition: @transition;
+        transition: @transition;
+        &.dj-disabled{
+          background-color: @disableBackground;
+          border: 1px solid @disableBorder;
+          color: @disableColor;
+          cursor: not-allowed;
+        }
+      }
+
+      .input-panel {
+        width: 100%;
+        height: 100%;
+        display: inline-table;
+
+        &.before {
+          input {
+            border-left: 0px;
+          }
+        }
+
+        &.after {
+          input {
+            border-right: 0px;
+            border-radius: @radiusBase 0px 0px @radiusBase;
+          }
+        }
+        .input-before {
+          width: 1px;
+          display: table-cell;
+          font-size: 12px;
+        }
+
+        .input-after {
+          width: 1px;
+          height: 100%;
+          display: table-cell;
+          font-size: 12px;
+          border: @borderBase;
+          border-left: 0px;
+          padding: @spacingForm;
+          padding-left: 0px;
+          padding-right: 10px;
+          vertical-align: middle;
+          border-radius: 0px @radiusBase @radiusBase 0px;
+          -webkit-transition: @transition;
+          transition: @transition;
+          background: @white;
+
+          .input-after-center {
+            height: 100%;
+            display: flex;
+            overflow: hidden;
+            align-items: center;
+            justify-content: center;
+
+            i {
+              cursor: pointer;
+              color: @iconColor;
+              font-size: 15px;
+              opacity: 0.6;
+
+              &:hover {
+                opacity: 1;
+              }
+            }
+          }
+        }
+
+        /*--------------------
+                icon
+          ---------------------*/
+        > i {
+          position: absolute;
+          top: 0rem;
+          right: 0rem;
+          // pointer-events: none;
+          color: @iconColor;
+          height: 100%;
+          width: 2.38rem;
+          font-size: 1rem;
+          font-weight: normal;
+          display: inline-flex;
+          align-items: center;
+          justify-content: center;
+        }
+
+        &.icon > input{
+          padding-right: 2.3rem;
+          line-height: @smallHeight;
+        }
+
+        &.icon-left {
+          input{
+            padding-left: 2.3rem;
+            line-height: @smallHeight;
+          }
+
+          i {
+            right: auto;
+            left: 0rem;
+          }
+        }
+      }
+    }
+
+    /*--------------------
+           before  after
+    ---------------------*/
+    &.before {
+      input {
+        border-radius: 0px @radiusBase @radiusBase 0px;
+      }
+
+      .input-panel.after input {
+        border-radius: 0px;
+      }
+
+      .input-panel > .input-before {
+        border-radius: 0px @radiusBase @radiusBase 0px;
+        // border-radius: 0px;
+      }
+
+      .before-panel {
+        display: table-cell;
+        width: 1px;
+        height: 100%;
+        padding: 0px 0px;
+        border: @borderBase;
+        border-right: 0px;
+        border-radius: @radiusBase 0px 0px @radiusBase;
+        -webkit-transition: @transition;
+        transition: @transition;
+        background: @white;
+        > span {
+          display: inline-flex;
+          // padding: 0rem 1rem;
+          // width: 100%;
+          height: 100%;
+          align-items: center;
+          justify-content: center;
+          word-break: keep-all;
+        }
+      }
+    }
+
+    &.after {
+      input {
+        border-radius: @radiusBase 0px 0px @radiusBase;
+      }
+
+      .input-panel > .input-after {
+        border-radius: 0px;
+      }
+
+      .after-panel {
+        display: table-cell;
+        width: 1px;
+        height: 100%;
+        padding: 0px 0px;
+        border: @borderBase;
+        border-left: 0px;
+        background: @white;
+        border-radius: 0px @radiusBase @radiusBase 0px;
+        -webkit-transition: @transition;
+        transition: @transition;
+
+        > span {
+          display: inline-flex;
+          // width: 100%;
+          height: 100%;
+          align-items: center;
+          justify-content: center;
+          word-break: keep-all;
+        }
+      }
+      .after-panel-iscolor {
+        border-radius: @radiusBase;
+        border: @borderBase;
+      }
+    }
+
+    &.before.after {
+      input {
+        border-radius: 0px;
+      }
+    }
+
+    /*--------------------
+           Placeholder
+    ---------------------*/
+    // input::-webkit-input-placeholder {
+    //   color: #C7C9CC;
+    // }
+    // input::-moz-placeholder {
+    //   color: #C7C9CC;
+    // }
+    // input:-ms-input-placeholder {
+    //   color: #C7C9CC;
+    // }
+
+    /*--------------------
+            hover
+    ---------------------*/
+    &.hover > .dj-input-panel > .input > .input-panel > input, input:hover, &.hover > .dj-input-panel > .input > .input-panel > .input-before,&.hover > .dj-input-panel > .input > .input-panel > .input-after  {
+      border-color: @formHoverBorder;
+      -webkit-box-shadow: none;
+      box-shadow: none;
+    }
+
+    /*--------------------
+            Disabled
+    ---------------------*/
+    &.disabled {
+      color: @disableColor;
+      cursor: not-allowed;
+      .input .input-panel{
+        .after-panel,.input-after,.before-panel{
+          background: @disableBackground;
+        }
+      }
+    }
+    &:not(.disabled) input[disabled] {
+      opacity: 0.45;
+      // pointer-events: none;
+      cursor: not-allowed;
+    }
+
+    /*--------------------
+            Focus
+    ---------------------*/
+
+    &.focus > .dj-input-panel > .input > .input-panel > input, input:focus, &.focus > .dj-input-panel > .input > .input-panel > .input-before,&.focus > .dj-input-panel > .input > .input-panel > .input-after {
+      border-color: @focusBorderColor;
+      background: @white ;
+      color: @fontColor;
+      -webkit-box-shadow: none;
+      box-shadow: none;
+    }
+    &.focus input::-webkit-input-placeholder, input:focus::-webkit-input-placeholder {
+      color: rgba(115, 115, 115, 0.87);
+    }
+    &.focus input::-moz-placeholder, input:focus::-moz-placeholder {
+      color: rgba(115, 115, 115, 0.87);
+    }
+    &.focus input:-ms-input-placeholder, input:focus:-ms-input-placeholder {
+      color: rgba(115, 115, 115, 0.87);
+    }
+
+    /*--------------------
+              Error
+      ---------------------*/
+    &.error, .dj-form .error &, .dj-form.error & {
+       .dj-input-panel > .input > .input-panel > input, .dj-input-panel > .input > .input-panel > .input-before, .dj-input-panel > .input > .input-panel > .input-after {
+        background-color: @errorBackground;
+        border-color: @errorBorder;
+        color: @errorColor;
+        -webkit-text-fill-color: @errorColor;
+        -webkit-box-shadow: none;
+        box-shadow: none;
+        i {
+          color: @errorColor;
+        }
+      }
+      input::-webkit-input-placeholder {
+        color: @errorBorder;
+        font-size: 14px;
+      }
+      input::-moz-placeholder {
+        color: @errorBorder;
+      }
+      input:-ms-input-placeholder {
+        color: @errorBorder;
+      }
+
+
+      .input .input-panel i {
+        color: @errorColor;
+      }
+
+      &.before {
+        .before-panel {
+          background-color: @errorBackground;
+          border-color: @errorBorder;
+          color: @errorColor;
+        }
+      }
+
+      &.after {
+        .after-panel {
+          background-color: @errorBackground;
+          border-color: @errorBorder;
+          color: @errorColor;
+        }
+      }
+    }
+    .fade-enter-active, .fade-leave-active {
+      transition: opacity .5s;
+    }
+    .fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
+      opacity: 0;
+    }
+
+    /*--------------------
+            Size
+    ---------------------*/
+    &.mini {
+      height: @miniHeight;
+      input{
+        font-size: 12px;
+        line-height: @miniHeight;
+      }
+    }
+    &.small, &.tiny {
+      height: @smallHeight;
+      input{
+        font-size: 12px;
+        line-height: @smallHeight;
+      }
+    }
+    &.medium {
+      height: @defaultHeight;
+      input{
+        font-size: 14px;
+        line-height: @defaultHeight;
+      }
+    }
+    &.large {
+      height: @largeHeight;
+      input{
+        font-size: 14px;
+        line-height: @largeHeight;
+      }
+    }
+  }

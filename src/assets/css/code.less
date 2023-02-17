@@ -1,0 +1,45 @@
+
+
+  .dj-code {
+    display: block;
+    border: @border;
+    border-radius: @radiusBase;
+    margin-bottom: 50px;
+
+    h2 {
+      border-bottom: @border;
+      padding: 1rem;
+      font-size: 1.5rem;
+    }
+    .temp-test{
+      border-bottom: @border;
+      padding: .7rem 1rem;
+      p{
+        padding-bottom: 5px;
+      }
+      p:last-child{
+        padding: 0;
+      }
+      span{
+        font-weight: 600;
+      }
+    }
+
+    .case-code {
+      border-bottom: @border;
+      padding: 1rem;
+    }
+
+     .temp-code {
+      border-radius: 0px 0px @radiusBase @radiusBase;
+      overflow: hidden;
+    }
+    &.fade-enter-active, &.fade-leave-active {
+      transition: opacity .5s;
+      height: auto;
+    }
+    &.fade-enter, &.fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
+      opacity: 0;
+      height: 0px;
+    }
+  }

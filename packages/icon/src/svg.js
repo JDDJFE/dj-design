@@ -1,0 +1,32 @@
+/* eslint-disable */
+!(function(s) {
+  var c, t = '<svg><symbol id="icon-load1"  viewBox="0 0 40 40"><path opacity="0.2" fill="" d="M20.201,5.169c-8.254,0-14.946,6.692-14.946,14.946c0,8.255,6.692,14.946,14.946,14.946 s14.946-6.691,14.946-14.946C35.146,11.861,28.455,5.169,20.201,5.169z M20.201,31.749c-6.425,0-11.634-5.208-11.634-11.634 c0-6.425,5.209-11.634,11.634-11.634c6.425,0,11.633,5.209,11.633,11.634C31.834,26.541,26.626,31.749,20.201,31.749z"></path><path fill="" d="M26.013,10.047l1.654-2.866c-2.198-1.272-4.743-2.012-7.466-2.012h0v3.312h0 C22.32,8.481,24.301,9.057,26.013,10.047z" transform="rotate(42.1171 20 20)"><animateTransform attributeType="xml" attributeName="transform" type="rotate" from="0 20 20" to="360 20 20" dur="0.5s" repeatCount="indefinite"></animateTransform></path></symbol><symbol id="icon-load2"  viewBox="0 0 50 50"><path fill="" d="M25.251,6.461c-10.318,0-18.683,8.365-18.683,18.683h4.068c0-8.071,6.543-14.615,14.615-14.615V6.461z" transform="rotate(275.098 25 25)"><animateTransform attributeType="xml" attributeName="transform" type="rotate" from="0 25 25" to="360 25 25" dur="0.6s" repeatCount="indefinite"></animateTransform></path></symbol ><symbol id="icon-load3"  viewBox="0 0 50 50"><path fill="" d="M43.935,25.145c0-10.318-8.364-18.683-18.683-18.683c-10.318,0-18.683,8.365-18.683,18.683h4.068c0-8.071,6.543-14.615,14.615-14.615c8.072,0,14.615,6.543,14.615,14.615H43.935z" transform="rotate(275.098 25 25)"><animateTransform attributeType="xml" attributeName="transform" type="rotate" from="0 25 25" to="360 25 25" dur="0.6s" repeatCount="indefinite"></animateTransform></path></symbol ><symbol id="icon-load4"><rect x="20%" y="0" width="10%" height="90%" fill=""><animate attributeName="opacity" attributeType="XML" values="1; .2; 1" begin="0s" dur="0.6s" repeatCount="indefinite"></animate></rect><rect x="40%" y="0" width="10%" height="90%" fill=""><animate attributeName="opacity" attributeType="XML" values="1; .2; 1" begin="0.2s" dur="0.6s" repeatCount="indefinite"></animate></rect><rect x="60%" y="0" width="10%" height="90%" fill=""><animate attributeName="opacity" attributeType="XML" values="1; .2; 1" begin="0.4s" dur="0.6s" repeatCount="indefinite"></animate></rect></symbol ><symbol id="icon-load5"><rect x="20%" y="7.6416" width="10%" height="35%" fill="" opacity="0.2"><animate attributeName="opacity" attributeType="XML" values="0.2; 1; .2" begin="0s" dur="0.6s" repeatCount="indefinite"></animate><animate attributeName="height" attributeType="XML" values="10; 20; 10" begin="0s" dur="0.6s" repeatCount="indefinite"></animate><animate attributeName="y" attributeType="XML" values="10; 5; 10" begin="0s" dur="0.6s" repeatCount="indefinite"></animate></rect><rect x="40%" y="5.1416" width="10%" height="50%" fill="" opacity="0.2"><animate attributeName="opacity" attributeType="XML" values="0.2; 1; .2" begin="0.15s" dur="0.6s" repeatCount="indefinite"></animate><animate attributeName="height" attributeType="XML" values="10; 20; 10" begin="0.15s" dur="0.6s" repeatCount="indefinite"></animate><animate attributeName="y" attributeType="XML" values="10; 5; 10" begin="0.15s" dur="0.6s" repeatCount="indefinite"></animate></rect><rect x="60%" y="7.3584" width="10%" height="40%" fill="" opacity="0.2"><animate attributeName="opacity" attributeType="XML" values="0.2; 1; .2" begin="0.3s" dur="0.6s" repeatCount="indefinite"></animate><animate attributeName="height" attributeType="XML" values="10; 20; 10" begin="0.3s" dur="0.6s" repeatCount="indefinite"></animate><animate attributeName="y" attributeType="XML" values="10; 5; 10" begin="0.3s" dur="0.6s" repeatCount="indefinite"></animate></rect></symbol><symbol id="icon-load6"><circle fill="" stroke="none" cx="15%" cy="50%" r="12%"><animate attributeName="opacity" dur="1s" values="0;2;0" repeatCount="indefinite" begin="0.1"/></circle><circle fill="" stroke="none" cx="45%" cy="50%" r="12%"><animate attributeName="opacity" dur="1s" values="0;2;0" repeatCount="indefinite" begin="0.2"/></circle><circle fill="" stroke="none" cx="75%" cy="50%" r="12%"><animate attributeName="opacity" dur="1s" values="0;2;0" repeatCount="indefinite" begin="0.3"/></circle></symbol><symbol id="icon-load7"><circle fill="" stroke="none" cx="15%" cy="50%" r="12%"><animateTransform attributeName="transform" dur="1s" type="translate" values="0 8 ; 0 -8; 0 8" repeatCount="indefinite" begin="0.1"/></circle><circle fill="" stroke="none" cx="45%" cy="50%" r="12%"><animateTransform attributeName="transform" dur="1s" type="translate" values="0 6 ; 0 -6; 0 6" repeatCount="indefinite" begin="0.2"/></circle><circle fill="" stroke="none" cx="75%" cy="50%" r="12%"><animateTransform attributeName="transform" dur="1s" type="translate" values="0 3 ; 0 -3; 0 3" repeatCount="indefinite" begin="0.3"/></circle></symbol></svg>', l = (c = document.getElementsByTagName('script'))[c.length - 1].getAttribute('data-injectcss'); if (l && !s.__iconfont__svg__cssinject__) {
+    s.__iconfont__svg__cssinject__ = !0; try {
+      document.write('<style>.svgfont {display: inline-block;width: 1em;height: 1em;fill: currentColor;vertical-align: -0.1em;font-size:16px;}</style>');
+    } catch (c) {
+      console && console.log(c);
+    }
+  } !(function(c) {
+    if (document.addEventListener) if (~['complete', 'loaded', 'interactive'].indexOf(document.readyState)) setTimeout(c, 0); else {
+      var l = function() {
+        document.removeEventListener('DOMContentLoaded', l, !1), c();
+      }; document.addEventListener('DOMContentLoaded', l, !1);
+    } else document.attachEvent && (o = c, a = s.document, i = !1, (e = function() {
+      try {
+        a.documentElement.doScroll('left');
+      } catch (c) {
+        return void setTimeout(e, 50);
+      } t();
+    })(), a.onreadystatechange = function() {
+      a.readyState == 'complete' && (a.onreadystatechange = null, t());
+    }); function t() {
+      i || (i = !0, o());
+    } var o, a, i, e;
+  })(function() {
+    var c, l; (c = document.createElement('div')).innerHTML = t, t = null, (l = c.getElementsByTagName('svg')[0]) && (l.setAttribute('aria-hidden', 'true'), l.style.position = 'absolute', l.style.width = 0, l.style.height = 0, l.style.overflow = 'hidden', (function(c, l) {
+      l.firstChild ? (function(c, l) {
+        l.parentNode.insertBefore(c, l);
+      })(c, l.firstChild) : l.appendChild(c);
+    })(l, document.body));
+  });
+})(window);

@@ -1,0 +1,162 @@
+// Prefix
+@prefix: dj-;
+@prefix-icon: dj-icon;
+
+
+// Base 默认
+@radius2      : 2px;
+@radiusBase      : 4px;
+@fontSizeBase    : 14px;
+@white           : #FFF;
+@black           : #000;
+@fontColor       : #2C2D2F;
+@borderColor     : #E3E5EB;
+@borderBase      : 1px solid @borderColor;
+@backgroundColor : #FAFAFA;
+
+
+
+// FontColor
+@fontColor    : #2C2D2F; // 默认
+@textColor    : #606266; // 辅助文字
+@secondColor  : #959697; // 次要文字
+@nodateColor  : #C7C9CC; // 无数据颜色
+@iconColor    : #BDBFC2; // icon图标颜色
+@iconHoverColor    : #999999; // icon图标颜色
+
+
+
+// Background
+@backgroundColor  : #FAFAFA; // 默认
+@otherBackground  : #F4F5F9;
+@defaultBackground  : #F4F4F5;
+@hoverBackground  : #F7F7F8; // 鼠标移入悬停 -浅色色系 比如select
+@formHoverBackground  : #F2F3F6; // 鼠标移入悬停 -深色系
+
+// Border
+@borderColor      : #E3E5EB; // 默认
+@otherBorder      : #F1F3F6;
+@shallowBorder    : #F1F3F6; // 浅色
+@formHoverBorder  : #C8CCD6; // 鼠标移入悬停
+@formBorder       : #D2D4D6; // 单选多选边框色
+
+// 聚焦套餐
+@focusBorderColor : #2C94FF; // 聚焦边框颜色
+@focusColor       : #2B94FF; // 聚焦字体颜色
+
+
+// 禁用样式套餐
+@disableColor     : #C7C9CC; // 禁用字体色
+@disableBorder    : #DCDFE6; // 禁用
+@disableBackground: #F5F6FA; // 禁用
+
+// 状态色套餐
+@primaryBorder    : #ABD4FF;
+@primaryBackground: #E5F2FF;
+@primaryColor     : #2C94FF;
+@primaryActiveColor: #2888EB;
+@primaryHoverColor: #6bb4ff;
+
+@dangerBorder     : #FFCACA;
+@dangerBackground : #FFF1F1;
+@dangerColor      : #E91D1D;
+
+@successBorder    : #B2F0C3;
+@successBackground: #F0F9EB;
+@successColor     : #02C438;
+
+@warnBorder       : #FFE9BD;
+@warnBackground   : #FFF8E9;
+@warnColor        : #FFAD00;
+
+@errorBorder      : #FFCACA;
+@errorBackground  : #FFEEEE;
+@errorColor       : #FD1B1B;
+
+@infoBorder       : #D2D4D6;
+@infoBackground   : #F7F7F8;
+@infoColor        : #BDBFC2;
+
+// FontSize
+@fontSizeBase   : 14px; // 默认
+@fontSizeH1     : 24px;
+@fontSizeH2     : 20px;
+@fontSizeLarge  : 18px;
+@fontSizeSamll  : 16px;
+@fontSizeMini   : 12px;
+
+
+
+// Width + SizeWidth
+@defaultWidth    : 220px; // 默认表单元素宽高
+@largeWidth    : 90vw; // 大
+@mediumtWidth  : 70vw; // 中
+@smallWidth    : 50vw; // 小
+@miniWidth     : 30vw; // 超小
+
+
+// Heigt + SizeHeigt + LineHeight
+@defaultHeight  : 36px; // 默认 - 中
+@largeHeight    : 40px; // 大
+@smallHeight    : 32px; // 小
+@miniHeight     : 28px; // 超小
+@height26    : 26px;
+@height24    : 24px;
+@height22    : 22px;
+@height20    : 20px;
+
+
+
+
+// Padding/ Margin
+@spacing: 5px;
+@spacing-25      : 25px;
+@spacing-20      : 20px;
+@spacing-16      : 16px;
+@spacing-12      : 12px;
+@spacing-10      : 10px;
+@spacing-8       : 8px;
+@spacing-4       : 4px;
+
+@spacingForm     : 0 @spacing-12;
+@spacingForm-rem : 0 0.5rem;
+@spacing-0-8     : 0 @spacing-8;
+@spacing-0-20     : 0 @spacing-20;
+@spacing-8-16    : @spacing-8 @spacing-16;
+@spacing-10-16   : @spacing-10 @spacing-16;
+@spacing-10-20   : @spacing-10 @spacing-20;
+@spacing-16-20   : @spacing-16 @spacing-20;
+
+
+
+// Shadow 阴影
+@shadowBase    : 0 2px 12px 0 rgba(0,0,0,.1);
+@shadowDeep    : 0 1px 2px -2px rgba(0, 0, 0, .16),0 3px 6px 0 rgba(0, 0, 0, .16), 0 5px 12px 4px rgba(0, 0, 0, .16);
+@shadowAsh     : 0 3px 6px -4px rgba(0, 0, 0, .12), 0 6px 16px 0 rgba(0, 0, 0, .12), 0 9px 28px 8px rgba(0, 0, 0, .12);
+@shadowShallow : 0 3px 6px -4px rgba(0, 0, 0, .08), 0 6px 16px 0 rgba(0, 0, 0, .05), 0 9px 28px 8px rgba(0, 0, 0, .03);
+@shadowPopover: 0px 12px 48px 16px rgba(0, 0, 0, 0.03), 0px 0px 18px 0px rgba(0, 0, 0, 0.04);
+
+
+
+
+// Animation
+@animation-time       : .3s;
+@animation-time-quick : .1s;
+@transition-time      : .2s;
+@ease-in-out          : ease-in-out;
+@transition-timing-function : ease-in-out;
+
+@transition: box-shadow 0.3s ease, border-color 0.3s ease, -webkit-box-shadow 0.3s ease;
+
+
+.mixins_Disable{
+  border-color: @disableBorder;
+  color: @disableColor;
+  background: @disableBackground;
+}
+
+
+// REM
+
+
+// ZIndex

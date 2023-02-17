@@ -1,0 +1,81 @@
+.dj-badge {
+  &:hover {
+    color: @focusColor;
+  }
+
+  &.dj-badge-default {
+    position: relative;
+    display: inline-block;
+    line-height: 18px;
+    text-align: center;
+    min-width: 42px;
+    color: @textColor;
+    cursor: pointer;
+    border-radius: 4px;
+    
+    i {
+      width: 32px;
+      height: 32px;
+      font-size: @fontSizeH2;
+    }
+  }
+
+
+  &.dot {
+    min-width: 8px;
+    min-height: 8px;
+    display: inline-block;
+    border-radius: 100%;
+    background: @dangerColor;
+    cursor: pointer;
+  }
+
+  &.dj-badge-border {
+    line-height: 36px;
+    min-width: 68px;
+    border: 1px solid #dcdfe6;
+
+    &:hover {
+      color: @primaryHoverColor;
+      border-color: @borderColor;
+      background-color: @backgroundColor;
+    }
+  }
+
+  span {
+    font-size: @fontSizeBase;
+    font-family: PingFangSC-Regular, PingFang SC;
+  }
+
+  .dj-badge-yuan {
+    position: absolute;
+    background: @primaryColor;
+    color: @white ;
+    border-radius: 100px;
+    border: 1px solid @white;
+    padding: 0 4px;
+    z-index: 20;
+    transform: translateY(-50%) translateX(100%);
+    box-sizing: content-box;
+      span {
+        display: inline-block;
+        // width: 20px;
+      }
+    
+  }
+
+  .dj-badge-dot {
+    position: absolute;
+    background: @primaryColor;
+    color: @white;
+    border-radius: 100px;
+    z-index: 20;
+    transform: translateY(-50%) translateX(100%);
+    border: 1px solid @white;
+  }
+
+}
+.spacing-large{
+  width: 50px;
+  display: inline-block;
+}

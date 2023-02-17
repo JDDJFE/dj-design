@@ -1,0 +1,84 @@
+@import '~codemirror/addon/dialog/dialog.css';
+@import '~codemirror/addon/merge/merge.css';
+// // 折叠
+@import '~codemirror/addon/fold/foldgutter.css';
+
+// 核心样式
+@import '~codemirror/lib/codemirror.css';
+
+@import '~codemirror/addon/display/fullscreen.css'; // 全屏显示编辑器
+
+// 引入代码自动提示插件
+@import '~codemirror/addon/hint/show-hint.css';
+
+.dj-json-in-coder-panel {
+  flex-grow: 1;
+  display: flex;
+  position: relative;
+
+  div.CodeMirror-cursors {
+    z-index: 79;
+  }
+
+  .maskBox {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    background-color: rgba(245, 247, 250, 0.5);
+    z-index: 999;
+    cursor: not-allowed;
+  }
+
+  .CodeMirror {
+    flex-grow: 1;
+    z-index: 1;
+    /*max-height: 500px;*/
+    /*height: auto;*/
+    /*min-height: 300px;*/
+  }
+
+  .CodeMirror-code {
+    line-height: 19px
+  }
+
+  .code-mode-select {
+    position: absolute;
+    z-index: 2;
+    right: 10px;
+    top: 10px;
+    max-width: 130px;
+  }
+
+  .CodeMirror-merge-l-chunk {
+    background: rgba(238, 238, 255, .5);
+  }
+
+  .CodeMirror-selected {
+    /*background: #d9d9d9;*/
+    background: rgb(181, 213, 255);
+  }
+
+  .errorHighlight2 {
+    background: orange;
+  }
+
+  .note-gutter {
+    width: 2em;
+  }
+
+  .cm-searching {
+    background-color: #ffa;
+    background-color: rgba(255, 255, 0, .4);
+  }
+
+  .cm-matchhighlight {
+    background: red;
+  }
+}
+
+#dj-json-view {
+  width: 100%;
+  /*height: 500px;*/
+}

@@ -1,0 +1,138 @@
+.dj-textarea {
+  width: 29em;
+  outline: none;
+  position: relative;
+  display: inline-block;
+  vertical-align: middle;
+
+  textarea {
+    width: 100%;
+    height: 100%;
+    min-height: 2.5em;
+    line-height: 20px;
+    border: @borderBase;
+    font-size: 14px;
+    outline: 0;
+    overflow: auto;
+    border-radius: @radiusBase;
+    padding: @spacingForm;
+    padding-top: 0.35em;
+    padding-bottom: 0.35em;
+    background: @white;
+    color: @fontColor;
+    -webkit-transition: @transition;
+    transition: @transition;
+    resize: vertical;
+    position: relative;
+    &.disabled {
+      color: @disableColor;
+      cursor: not-allowed;
+      background: @disableBackground;
+    }
+  }
+
+  // 字数限制
+  .textarea-length {
+    position: absolute;
+    right: .5em;
+    bottom: .5em;
+    border-radius: @radiusBase;
+    pointer-events: none;
+    color: @textColor;
+  }
+
+  /*--------------------
+          Placeholder
+  ---------------------*/
+  textarea::-webkit-input-placeholder {
+    color: @disableColor;
+  }
+  textarea::-moz-placeholder {
+    color: @disableColor;
+  }
+  textarea:-ms-input-placeholder {
+    color: @disableColor;
+  }
+
+  /*--------------------
+          hover
+  ---------------------*/
+  &.hover > textarea, textarea:hover {
+    border-color: @formHoverBorder;
+      // background: #FAFAFA;
+    color: @fontColor;
+    -webkit-box-shadow: none;
+            box-shadow: none;
+  }
+    &.hover > textarea, .disabled:hover {
+    border-color: @formHoverBorder;
+      // background: #FAFAFA;
+    color: @disableColor;;
+    -webkit-box-shadow: none;
+            box-shadow: none;
+  }
+
+  /*--------------------
+          Disabled
+  ---------------------*/
+  &.disabled {
+    // cursor: not-allowed;
+    background: @disableBackground;
+    // border: 1px solid @disableBorder;
+  }
+  &:not(.disabled) textarea[disabled] {
+    cursor: not-allowed;
+    border: 1px solid @disableBorder;
+    color: @disableColor;
+  }
+  &:not(.disabled) textarea[disabled]:hover{
+    // opacity: 0.45;
+    border-color: @disableBorder;
+  }
+
+  /*--------------------
+          Focus
+  ---------------------*/
+
+  &.focus > textarea, textarea:focus {
+    border-color: @focusBorderColor;
+    background: @white;
+    color: #333;
+    -webkit-box-shadow: none;
+            box-shadow: none;
+  }
+  &.focus > textarea::-webkit-input-placeholder, textarea:focus::-webkit-input-placeholder {
+    color: rgba(115, 115, 115, 0.87);
+  }
+  &.focus > textarea::-moz-placeholder, textarea:focus::-moz-placeholder {
+    color: rgba(115, 115, 115, 0.87);
+  }
+  &.focus > textarea:-ms-input-placeholder, textarea:focus:-ms-input-placeholder {
+    color: rgba(115, 115, 115, 0.87);
+  }
+
+  /*--------------------
+          Error
+  ---------------------*/
+  &.error, .dj-form .error &, .dj-form.error & {
+      textarea {
+      background-color:@errorBackground;
+      border-color: @errorBorder;
+      color: @errorColor;
+      -webkit-box-shadow: none;
+      box-shadow: none;
+      i {
+        color: #9f3a38;
+      }
+    }
+    textarea::-webkit-input-placeholder {
+      color: @errorColor;
+    }
+    textarea::-moz-placeholder {
+      color: @errorColor;
+    }
+    textarea:-ms-input-placeholder {
+      color: @errorColor;
+    }
+  }
+}

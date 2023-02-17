@@ -1,0 +1,30 @@
+.dj-collapse-item {
+  border: 1px solid @borderColor;
+  .dj-collapse-title-outer {
+    padding: 14px 19px;
+    display: flex;
+    align-items: center;
+    background-color: @white;
+    cursor: pointer;
+    .dj-collapse-title-icon {
+      color: @iconColor;
+      margin-right: 10px;
+      transition: all @transition-time;
+      &.active {
+        transform: rotate(90deg);
+      }
+    }
+  }
+  .dj-collapse-content {
+    box-sizing: border-box;
+    padding: 11px 48px;
+    background: @infoBackground;
+    border-top-color: transparent;
+    transition: height @transition-time @transition-timing-function;
+    display: none;
+    &.active {
+      border-top: 1px solid @borderColor;
+      display: block;
+    }
+  }
+}

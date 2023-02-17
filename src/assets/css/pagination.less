@@ -1,0 +1,190 @@
+
+.dj-pagination{
+  // display: flex;
+  .dj-select-group .dj-select-original{
+    line-height: 30px;
+  }
+  .iconfont{
+    line-height: inherit;
+  }
+  .dj-pagination-box{
+    display: inline-block;
+    li{
+      display: inline-block;
+      vertical-align: middle;
+      // float: left;
+      padding: 0 8px;
+    //   background: #F4F4F5;
+      min-width: 32px;
+      line-height: 32px;
+      height: 32px;
+      margin:0 5px;
+      text-align: center;
+      cursor: pointer;
+      &:hover{
+            color: @primaryHoverColor;
+        }
+    }
+    .is-active{
+        color: @focusColor;
+    }
+    .dj-pagination-num {
+        border-radius: 4px;
+    }
+    .dj-pagination-left {
+        padding: 0 5px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+    }
+  }
+  .dj-pagination-ye{
+    padding:0 10px;
+    input.dj-pagination-ye-input{
+      -webkit-appearance: none;
+      background-color: #fff;
+      background-image: none;
+      border-radius: 4px;
+      border: 1px solid #dcdfe6;
+      box-sizing: border-box;
+      color: #606266;
+      display: inline-block;
+      font-size: inherit;
+      height: 30px;
+      line-height: 30px;
+      outline: none;
+      padding: 0 5px;
+      transition: border-color .2s cubic-bezier(.645,.045,.355,1);
+      width: 30px;
+      text-align: center
+    }
+    .dj-pagination-page-size {
+        margin: 0 5px;
+        &:hover {
+            border-color:@focusColor
+        }
+    }
+  }
+  .dj-pagination-ye input:hover{
+    border-color:@focusColor
+  }
+}
+.dj-paginationB{
+//   border: 1px solid rgba(34,36,38,.1);
+//   border-radius: 4px;
+  display: table;
+  .dj-select-group .dj-select-box{
+    border-color: transparent;
+  }
+  .dj-pagination-ye{
+    display: inline-block;
+    height: 32px;
+    align-items: center;
+    padding: 0;
+    vertical-align: middle;
+    span{
+      font-weight: 600;
+      font-size: 12px;
+    }
+  }
+  .dj-page-inner{
+    // border-right: 1px solid rgba(34, 36, 38, 0.1);
+    border: 1px solid @borderColor;
+    border-radius: 4px;
+    display: inline-block;
+    // align-items: center;
+    position: relative;
+    margin-left: 5px;
+    input.dj-pagination-ye-input{
+      width: 50px;
+      // border:none;
+      padding: 0;
+      padding-right: 20px;
+      border-radius: 4px;
+      border-color:#fff;
+    }
+    i{
+      cursor: pointer;
+      position: absolute;
+      right: 5px;
+      font-size: 16px;
+      top: 50%;
+      margin-top: -8px;
+    }
+  }
+  .dj-pagination-box li{
+    // margin: 0;
+    background: #fff;
+    position: relative;
+    border: 1px solid @borderColor;
+    border-radius: 4px;
+    // height: 30px;
+    &.is-active, &.is-active:hover{
+    //   background: @focusColor;
+    //   color: #fff;
+    border: 1px solid @focusBorderColor;
+    color: @focusColor;
+    }
+    &:hover{
+    //   background: rgba(34,36,38,.05);
+        border: 1px solid @primaryHoverColor;
+        color: @primaryHoverColor;
+    }
+    // &:before {
+    //   position: absolute;
+    //   content: '';
+    //   top: 0;
+    //   right: 0;
+    //   height: 100%;
+    //   width: 1px;
+    //   background: rgba(34,36,38,.1);
+    // }
+  }
+  .dj-select-group{
+    // border-right: 1px solid rgba(34,36,38,.1);
+    border: 1px solid @borderColor;
+    border-radius: 4px;
+    .icon-down1{
+      top: 8px;
+    }
+    .dj-select-original{
+      line-height: 30px;
+      border: none;
+    }
+  }
+}
+.dj-pagination-small {
+  font-size: 12px;
+  .dj-select-group .dj-select-original{
+    line-height: 22px;
+  }
+  .iconfont{
+    font-size: 14px;
+  }
+  .dj-pagination-box li {
+    min-width: 24px;
+    line-height: 24px;
+    height: 24px;
+    margin:0 4px;
+  }
+  .dj-pagination-box .dj-pagination-left {
+    padding: 0 4px;
+  } 
+  .dj-pagination-ye {
+    height: 24px;
+    input.dj-pagination-ye-input {
+        width: 26px;
+        height: 22px;
+        line-height: 22px;
+    }
+  }
+  .dj-page-inner {
+    input.dj-pagination-ye-input {
+        width: 50px;
+    }
+    i {
+        font-size: 12px;
+        margin-top: -7px;
+    }
+  }
+}

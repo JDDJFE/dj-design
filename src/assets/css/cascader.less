@@ -1,0 +1,180 @@
+.dj-cascader {
+  display: inline-block;
+  input {
+    border: none;
+  }
+  .disabled {
+    background: @disableBackground;
+    color: @disableColor;
+    cursor: not-allowed;
+    font-weight: unset;
+  }
+}
+.dj-cascader-main {
+  display: inline-block;
+  width: 100%;
+  height: 36px;
+  box-sizing: border-box;
+  background: @white;
+  border-radius: @radiusBase;
+  border: @borderBase;
+  transition: @transition;
+  padding: 7px 11px;
+  display: flex;
+  cursor: pointer;
+  &:hover {
+    border-color: @formHoverBorder;
+    &.disabled {
+      border-color: @borderColor;
+    }
+  }
+  &.active {
+    border-color: @focusBorderColor;
+    // color: @primaryColor;
+  }
+  .dj-cascader-main-content {
+    flex: 1;
+    margin-right: 12px;
+    // overflow: auto;
+    .dj-cascader-main-placeholder {
+      width: 100%;
+      font-size: @fontSizeBase;
+      font-family: PingFangSC-Regular, PingFang SC;
+      font-weight: 400;
+      color: #333333;
+      line-height: 20px;
+      // white-space: nowrap;
+      // overflow: hidden;
+      text-overflow: ellipsis;
+      cursor: pointer;
+    }
+  }
+  .dj-cascader-main-iconfont {
+    transition: all 0.2s ease;
+    &.active {
+      transform: rotate(180deg);
+    }
+    .iconfont {
+      color: @iconColor;
+    }
+  }
+}
+.dj-cascader-inner {
+  padding: 4px 0;
+  box-sizing: border-box;
+  max-height: 188px;
+  // overflow-y: auto;
+  display: flex;
+  .dj-cascader-col {
+    box-sizing: border-box;
+    // display: inline-block;
+    vertical-align: top;
+    max-height: 180px;
+    overflow: auto;
+    &:not(:last-child) {
+      border-right: 1px solid @otherBorder;
+    }
+    .dj-cascader-col-wrap {
+      min-height: 100%;
+      // overflow: auto;
+      .dj-cascader-item {
+        .dj-cascader-item-item {
+          padding: 8px 10px 8px 12px;
+          display: flex;
+          min-width: 150px;
+          max-width: 260px;
+          cursor: pointer;
+          &.search {
+            width: auto;
+          }
+          &.active {
+            // background: @hoverBackground;
+            .dj-cascader-item-item-content {
+              color: @primaryColor;
+            }
+          }
+          &:hover {
+            background: @hoverBackground;
+          }
+          .dj-cascader-item-item-content {
+            flex: 1;
+            font-size: @fontSizeBase;
+            font-family: PingFangSC-Regular, PingFang SC;
+            font-weight: 400;
+            color: @fontColor;
+            line-height: 20px;
+            margin-right: 8px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            & > * {
+              white-space: nowrap;
+              overflow: hidden;
+              text-overflow: ellipsis;
+            }
+            & .dj-radio.active {
+              font-weight: 600;
+              color: @black;
+              &.is-checked {
+                font-weight: 400;
+                color: @focusColor;
+              }
+            }
+            & .dj-radio.checked {
+              font-weight: 400;
+              color: @focusColor;
+            }
+          }
+          .iconfont {
+            color: @iconColor;
+          }
+          & .arrow-right.active {
+            color: @focusColor;
+          }
+        }
+      }
+    }
+  }
+}
+
+.dj-cascader-popover .dj-popover-inner-content {
+  box-sizing: border-box;
+  padding: 0;
+  // border-radius: 2px;
+  // border: 1px solid @otherBorder;
+}
+
+.error{
+  &.@{prefix}cascader, .@{prefix}cascader{
+    .@{prefix}cascader-main {
+      color: @errorColor;
+      border-color: @errorBorder;
+      background-color: @errorBackground;
+      .@{prefix}cascader-main-iconfont .iconfont {
+        color: @errorColor;
+      }
+      .@{prefix}cascader-main-content {
+        color: @errorColor;
+        background-color: @errorBackground;
+        input {
+          color: @errorColor;
+          background-color: @errorBackground;
+        }
+      }
+    }
+  }
+}
+.dj-cascader-empty-panel {
+  width: 100%;
+  padding: 5px 10px;
+  color: @nodateColor;
+  border-radius: @radiusBase;
+  background: @white;
+  text-align: center;
+}
+
+.dj-radio-label {
+  > div {
+    display: inline-block;
+  }
+}

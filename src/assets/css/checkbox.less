@@ -1,0 +1,338 @@
+.dj-checkbox {
+  margin-right: 32px;
+  font-size: 0;
+  vertical-align: middle;
+  &:last-child {
+    margin-right: 0;
+  }
+
+  &:not(.is-disabled) {
+    .dj-checkbox-icon {
+      &:hover {
+        border-color: @focusColor;
+      }
+    }
+  }
+
+  &:not(.is-button) {
+    .dj-checkbox-label {
+      margin-left: 8px;
+    }
+  }
+}
+
+.dj-checkbox-group {
+  .dj-checkbox:last-child {
+    margin-right: 0;
+  }
+}
+
+.dj-checkbox,
+.dj-checkbox-group {
+  color: @fontColor;
+  position: relative;
+  cursor: pointer;
+  display: inline-block;
+  font-family: PingFangSC-Regular, PingFang SC;
+  font-weight: 400;
+  // display: inline-flex;
+  // align-items: center;
+  // white-space: nowrap;
+  // user-select: none;
+
+  .dj-checkbox-label {
+    font-size: @fontSizeBase;
+  }
+
+  .dj-checkbox-original {
+    display: none;
+    outline: medium none;
+  }
+
+  &.is-indeterminate {
+    .dj-checkbox-icon {
+      background-color: @focusColor;
+      border-color: @focusColor;
+
+      &:before {
+        content: "";
+        position: absolute;
+        display: block;
+        background-color: @white;
+        height: 2px;
+        transform: scale(.5);
+        left: 0;
+        right: 0;
+        top: 5px;
+      }
+    }
+
+    .dj-checkbox-label {
+      color: @focusColor;
+    }
+  }
+
+  &.is-bordered:not(.is-button) {
+    display: inline-flex;
+    align-items: center;
+    border: 1px solid @borderColor;
+    padding: 0 13px;
+    height: @defaultHeight;
+    border-radius: 4px;
+    margin-right: 12px;
+  }
+
+  &.is-button {
+    display: inline-flex;
+    align-items: center;
+    padding: 0 20px;
+    height: @defaultHeight;
+    margin-right: 0;
+    border-color: @borderColor;
+    border-style: solid;
+    border-width: 1px 1px 1px 0;
+    position: relative;
+
+    &:not(:first-child) {
+      &::before {
+        position: absolute;
+        top: -1px;
+        left: -1px;
+        display: block;
+        box-sizing: content-box;
+        width: 1px;
+        height: 100%;
+        padding: 1px 0;
+        background-color: @borderColor;
+        transition: background-color 0.3s;
+        content: '';
+      }
+    }
+
+    &:first-child {
+      border-top-left-radius: 4px;
+      border-bottom-left-radius: 4px;
+      border-left: 1px solid @borderColor;
+      box-shadow: none
+    }
+
+    &:last-of-type {
+      border-top-right-radius: 4px;
+      border-bottom-right-radius: 4px;
+      border-right-width: 1px;
+    }
+  }
+
+  .dj-checkbox-icon {
+    display: inline-block;
+    vertical-align: -2px;
+    position: relative;
+    border: 1px solid @borderColor;
+    border-radius: 2px;
+    width: 14px;
+    height: 14px;
+    background-color: @white;
+    transition: border-color .25s cubic-bezier(.71, -.46, .29, 1.46), background-color .25s cubic-bezier(.71, -.46, .29, 1.46);
+
+    &::after {
+      box-sizing: content-box;
+      content: "";
+      border: 1px solid @white;
+      border-left: 0;
+      border-top: 0;
+      height: 7px;
+      left: 4px;
+      position: absolute;
+      top: 1px;
+      transform: rotate(45deg) scaleY(0);
+      width: 3px;
+      transition: transform .15s ease-in .05s;
+      transform-origin: center;
+    }
+  }
+
+  &.is-button {
+    transition: all .3s;
+
+    &.is-size-large {
+      padding: 0 25px;
+      height: @largeHeight;
+    }
+
+    &.is-size-small {
+      padding: 0 16px;
+      height: @smallHeight;
+
+      span.dj-checkbox-label {
+        font-size: 12px;
+      }
+    }
+
+    &.is-size-mini {
+      padding: 0 11px;
+      height: @miniHeight;
+
+      span.dj-checkbox-label {
+        font-size: 12px;
+      }
+    }
+  }
+
+  &.is-bordered {
+    padding: 0 20px;
+
+    &.is-size-large {
+      padding: 0 20px;
+      height: @largeHeight;
+    }
+
+    &.is-size-small {
+      padding: 0 16px;
+      height: @smallHeight;
+
+      .dj-checkbox-icon {
+        width: 12px;
+        height: 12px;
+
+        &::after {
+          width: 2px;
+          height: 6px;
+        }
+      }
+
+      span.dj-checkbox-label {
+        font-size: 12px;
+      }
+    }
+
+    &.is-size-mini {
+      padding: 0 12px;
+      height: @miniHeight;
+
+      .dj-checkbox-icon {
+        width: 12px;
+        height: 12px;
+
+        &::after {
+          width: 2px;
+          height: 6px;
+        }
+      }
+
+      span.dj-checkbox-label {
+        font-size: 12px;
+      }
+    }
+  }
+
+  &.is-checked {
+    color: @focusColor;
+
+    &:not(.is-disabled) {
+      z-index: 1;
+    }
+
+    .dj-checkbox-icon {
+      background-color: @focusColor;
+      border-color: @focusColor;
+
+      &::after {
+        transform: rotate(45deg) scaleY(1);
+      }
+    }
+
+    &.is-bordered {
+      border-color: @focusBorderColor;
+    }
+
+    &.is-button-solid {
+      background-color: @focusColor;
+      border-color: @focusColor;
+      color: @white;
+
+      &::before {
+        background-color: #8cc5ff;
+      }
+    }
+
+    &.is-button-outline {
+      border-color: @focusBorderColor;
+
+      &:first-child {
+        border-right-color: @focusBorderColor;
+      }
+
+      &::before {
+        background-color: @focusBorderColor;
+      }
+    }
+  }
+
+  &.is-disabled {
+    border-color: @borderColor;
+    cursor: no-drop;
+    color: @disableColor;
+
+    .dj-checkbox-icon {
+      background-color: @disableBackground;
+      border-color: @borderColor;
+
+      &::after {
+        border-color: @borderColor;
+      }
+    }
+
+    .dj-checkbox-label {
+      opacity: 0.6;
+    }
+
+    &.is-bordered {
+      border-color: @borderColor;
+    }
+
+    &.is-button {
+      color: @disableColor;
+    }
+
+    &.is-button.is-checked {
+      background: @disableBackground;
+      color: @disableColor;
+      border-color: @borderColor;
+    }
+
+    &.is-button-solid {
+      &::before {
+        background-color: @borderColor;
+      }
+    }
+  }
+}
+
+.error {
+  &.dj-checkbox:not(.is-checked), .dj-checkbox:not(.is-checked) {
+    color: (@errorColor);
+
+    &.is-bordered {
+      border-color: (@errorBorder);
+    }
+
+    &.is-button {
+      color: (@errorColor);
+
+      &:not(:first-child) {
+        &::before {
+          background-color: @errorBorder;
+        }
+      }
+    }
+
+    .dj-checkbox-icon, &.is-button {
+      background-color: @errorBackground;
+      border-color: (@errorBorder);
+
+      &::after {
+        border-color: (@errorColor);
+      }
+    }
+  }
+}

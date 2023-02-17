@@ -1,0 +1,51 @@
+.dj-link {
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+  position:relative;
+  vertical-align: middle;
+  &:hover,&:focus{
+    opacity: .7;
+  }
+  &.is-disabled{
+    cursor: not-allowed;
+    border-bottom:none;
+    opacity:0.5;
+    pointer-events:none;
+  }
+  &.dj-link-default{
+    color:@textColor;
+  }
+  &.dj-link-primary{
+    color: @primaryColor ;
+  }
+  &.dj-link-success{
+    color:@successColor;
+  }
+  &.dj-link-warning{
+    color:@warnColor;
+  }
+  &.dj-link-danger{
+    color:@dangerColor;
+  }
+  &.dj-link-info{
+    color:@infoColor;
+  }
+  &.underline{
+    &:hover{border-bottom:1px solid;}
+  }
+  &.dj-link-default::after {
+    border-color: @primaryColor;
+  }
+  &.dj-link.dj-link-default:hover {
+    color: @primaryColor;
+  }
+  &.iconfont.left{
+    position:absolute;
+    right:0;
+    top:0;
+  }
+  .dj-link-icon {
+    vertical-align: text-bottom;
+  }
+}

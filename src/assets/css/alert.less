@@ -1,0 +1,172 @@
+//  &.dj-button--primary{
+//       &, &.is-disabled:hover, &.is-disabled:focus{
+//         background: @white;
+//         border-color: @focusColor;
+//         color:@focusColor;
+//       }
+      
+//     }
+//     &.dj-button--success{
+//       &, &.is-disabled:hover, &.is-disabled:focus{
+//         background: @white;
+//         border-color: @successColor;
+//         color:@successColor;
+//       }
+//     }
+.dj-alert{
+  width: 100%;
+//   padding: 10px 15px;
+  padding: 8px 16px;
+  margin: 0;
+  box-sizing: border-box;
+  border-radius: 4px;
+  position: relative;
+  background-color: #fff;
+  overflow: hidden;
+  opacity: 1;
+  display: flex;
+  align-items: center;
+  transition: opacity .2s;
+  z-index: 1;
+  &.dj-alert-has-description {
+      padding: 12px 16px;
+  }
+  &.dj-alert-info:not(.dj-alert-has-color){
+    // background-color: @infoBackground;
+    background-color: @defaultBackground;
+    // color: @infoColor;
+    color: @textColor;
+    &.dj-alert-dark{
+      background-color: @infoColor;
+      color: #fff;
+    }
+     &.is-border{
+      border:1px solid @infoBorder;
+    }
+  }
+
+  &.dj-alert-success:not(.dj-alert-has-color){
+    background-color:@successBackground;
+    color: @successColor;
+    &.dj-alert-dark{
+      background-color: @successColor;
+      color: #fff;
+    }
+    &.is-border{
+      border:1px solid @successBorder;
+    }
+  }
+  &.dj-alert-warning:not(.dj-alert-has-color){
+    background-color: @warnBackground;
+    color: @warnColor ;
+    &.dj-alert-dark{
+      background-color: @warnColor ;
+      color: #fff;
+    }
+    &.is-border{
+      border:1px solid @warnBorder;
+    }
+  }
+  &.dj-alert-error:not(.dj-alert-has-color){
+    background-color: @dangerBackground;
+    color: @dangerColor ;
+    &.dj-alert-dark{
+      background-color: @dangerColor ;
+      color: #fff;
+    }
+    &.is-border{
+      border:1px solid @dangerBorder ;
+    }
+  }
+   &.dj-alert-primary:not(.dj-alert-has-color){
+    background-color: @primaryBackground;
+    color: @primaryColor;
+    &.dj-alert-dark{
+      background-color: @primaryColor;
+      color: #fff;
+    }
+    &.is-border{
+      border:1px solid @primaryBorder;
+    }
+  }
+  &.is-center{
+    justify-content: center;
+  }
+  .dj-alert-color-bg{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0; 
+    z-index:-1;
+    border-radius:4px;
+  }
+  .dj-alert-color-bg:not(.dj-alert-bgcolor){
+     opacity: 0.08;
+  }
+  .dj-alert_content{
+      width: 100%;
+    display: table-cell;
+    .dj-alert_common {
+        display: flex;
+        // align-items: center;
+        align-items: flex-start;
+        .dj-alert_icon{
+            font-size: 14px;
+            width: 14px;
+            margin-right: 8px;
+            flex-shrink: 0;
+            line-height: 20px;
+            &.is-title {
+              font-size: 16px;
+              width: 16px;
+              line-height: 22px;
+            }
+          }
+        .dj-alert_message {
+            font-size: 14px;
+          //   line-height: 18px;
+            line-height: 20px;
+            // z-index:999;
+            flex: 1;
+            &.dj-alert_title {
+                font-size: 16px;
+                line-height: 22px;
+            }
+            &.is-bold{
+              font-weight: 700;
+            }
+          }
+        .dj-alert_closebtn{
+            font-size: 12px;
+            opacity: 1;
+            margin-left: 8px;
+            flex-shrink: 0;
+            line-height: 20px;
+            // position: absolute;
+            // top: 10px;
+            // //   right: 15px;
+            // right: 16px;
+            cursor: pointer;
+            &.is-customed {
+                font-size: 13px;
+                top: 8px;
+            }
+            &.is-title-btn {
+                line-height: 22px;
+            }
+        }
+
+    }
+    .dj-alert_description{
+    //   font-size: 12px;
+      font-size: 14px;
+      line-height: 22px;
+      margin: 8px 0 0;
+      &.has_icon {
+          padding-left: 24px;
+          box-sizing: border-box;
+      }
+    }
+  }
+}

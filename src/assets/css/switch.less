@@ -1,0 +1,149 @@
+.dj-switch {
+  vertical-align: middle;
+  display: inline-block;
+  position: relative;
+  width: 40px;
+  height: 20px;
+  outline: 0;
+  font-size: @fontSizeBase;
+  border-radius: 15px;
+  box-sizing: border-box;
+  background-color: @infoBorder;
+  transition: background-color 0.1s, border 0.1s;
+  cursor: pointer;
+  .switch-input {
+    display: none;
+  }
+  & .before, & .after{
+    content: "";
+    position: absolute;
+    left: 0;
+    height: 20px;
+    border-radius: 15px;
+    // top: -1px;
+    // width: 40px;
+  }
+  & .before {
+    width: 100%;
+    // height: 100%;
+    background-color: @infoBorder ;
+    transition: transform 0.35s cubic-bezier(0.45, 1, 0.4, 1);
+  }
+  & .after {
+    // margin: 0 auto;
+    top: 2px;
+    width:  16px;
+    height: 16px;
+    // border: 1px solid rgba(255, 255, 255, 0.1);
+    background-color: @white;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
+    transition: transform 0.35s cubic-bezier(0.4, 0.4, 0.25, 1.35);
+    border-radius: 100%;
+  }
+  &.is-size-large{
+    height: 26px;
+    // font-size: 14px;
+  }
+  &.is-size-large{
+    width: 54px;
+    .before,.after{
+      height: 26px;
+    }
+    .after{
+      height: 22px;
+      width: 22px;
+    }
+  }
+  &.is-size-mini{
+    height: 16px;
+  }
+  &.is-size-mini{
+    width: 28px;
+    .before,.after{
+      height: 16px;
+    }
+    .after{
+      height: 12px;
+      width: 12px;
+    }
+  }
+  &.dj-switch-on{
+    .before {
+      background-color: @focusColor;
+    }
+    .dj-swich-content{
+      color: @white ;
+      justify-content: flex-start;
+      left: 2px;
+    }
+    .dj-swich-content-icon{
+      color: @white ;
+      justify-content: flex-start;
+      font-size: 7px;
+    }
+  }
+  .dj-swich-content{
+    color: @white;
+    width:100%;
+    height:100%;
+    position:absolute;
+    padding:0px 5px;
+    display: inline-flex;
+    align-items: center;
+    // padding-left: 2px;
+    
+    line-height: 20px;
+    right: 2px;
+    justify-content: flex-end;
+    font-family: PingFangSC-Medium, PingFang SC;
+    font-weight: 500;
+    user-select:none
+  }
+  &.is-disabled{
+    cursor: not-allowed;
+    opacity: 0.4;
+  }
+  &.is-disabled:before{
+    background: @disableBorder ;
+  }
+  .dj-swich-content-icon{
+    color: @white;
+    width:100%;
+    height:100%;
+    position:absolute;
+    padding:0px 5px;
+    display: inline-flex;
+    align-items: center;
+    // padding-left: 2px;
+    
+    line-height: 20px;
+    right: 0px;
+    justify-content: flex-end;
+    font-size: 10px;
+    font-family: PingFangSC-Medium, PingFang SC;
+    font-weight: 500;
+    user-select:none
+  }
+  &.is-disabled{
+    cursor: not-allowed;
+    opacity: 0.4;
+  }
+  &.is-disabled:before{
+    background: @disableBorder ;
+  }
+}
+
+.error{
+  .dj-switch, &.dj-switch{
+    border-color:(@errorBorder);
+    .before{
+      background: @errorBackground;
+    }
+    .after{
+      border-color:(@errorBorder);
+    }
+    .dj-swich-content{
+      color: (@errorColor);
+    }
+  }
+}

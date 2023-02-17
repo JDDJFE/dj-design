@@ -1,0 +1,52 @@
+.dj-tree {
+  width: 100%;
+
+  .dj-tree-node {
+
+    .dj-tree-node-item {
+      display: flex;
+      align-items: center;
+      position: relative;
+      padding: 12px 0px;
+      background-color: #fff;
+      cursor: pointer;
+      border-left: 3px solid #fff;
+      color: #606266;
+
+      &.dj-tree-node-item-level1 {
+        color: #2C2D2F;
+      }
+
+      .dj-tree-node-item-text {
+        margin-left: 6px;
+      }
+
+      .dj-tree-node-item-right {
+        display: none;
+        position: absolute;
+        right: 0;
+      }
+
+      .iconfont {
+        color: #959697;
+      }
+
+      &:hover {
+        .dj-tree-node-item-right {
+          display: inline-flex;
+        }
+        background-color: @formHoverBackground;
+      }
+
+      &.dj-tree-node-item-checked {
+        border-left: 3px solid @primaryColor;
+        background-color: @primaryBackground;
+      }
+
+      &.dj-tree-node-item-disabled {
+        color: @disableColor;
+        cursor: not-allowed;
+      }
+    }
+  } 
+}

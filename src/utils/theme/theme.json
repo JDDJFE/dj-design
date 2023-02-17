@@ -1,0 +1,26 @@
+[
+  {
+    "key": "jddj-blue",
+    "modifyVars": {
+      "@primaryColor": "#2C94FF",
+      "@primaryActiveColor": "#2888EB",
+      "@primaryHoverColor": "#6bb4ff",
+      "@primaryBackground": "#E5F2FF",
+      "@primaryBorder": "#ABD4FF",
+      "@focusBorderColor": "#2C94FF",
+      "@focusColor": "#2B94FF"
+    }
+  },
+  {
+    "key": "jddj-green",
+    "modifyVars": {
+      "@primaryColor": "#2CCCCF",
+      "@primaryActiveColor": "#1BA1A8",
+      "@primaryHoverColor": "#51DBD9",
+      "@primaryBackground": "#F0FFFD",
+      "@primaryBorder": "#2CCCCF",
+      "@focusBorderColor": "#2CCCCF",
+      "@focusColor": "#2CCCCF"
+    }
+  }
+]

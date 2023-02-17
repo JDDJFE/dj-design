@@ -1,0 +1,128 @@
+.dj-message{
+  position: fixed;
+  left: 50%;
+  margin-left:-175px;
+  border-radius: @radiusBase;
+  z-index: 99;
+  overflow: hidden;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-box-shadow: @shadowBase;
+  box-shadow: @shadowBase;
+  transition: all 0.3s;
+  animation-name: msgFadeInDown;
+  border: 1px solid transparent;
+  -webkit-animation-name: msgFadeInDown;
+  animation-duration: .4s;
+  -webkit-animation-duration: .4s;
+  i.dj-message-close{
+    font-family: "iconfont";
+    line-height: 1;
+    font-size: 12px;
+    font-style: normal;
+    position: absolute;
+    right: 16px;
+    top: 16px;
+    cursor: pointer;
+    z-index: 1;
+    -webkit-font-smoothing: antialiased;
+    &:before {
+      content: "\e60b";
+    }
+  }
+  &.dj-hide-msg {
+    animation: msgUp 0.6s;
+    opacity: 0;
+    z-index: 95;
+  }
+  .dj-hide-msg_ch{
+    opacity: 0;
+  }
+  @keyframes msgUp {
+    0% {
+      opacity: 1;
+    }
+    100% {
+      top: -50px;
+      opacity: 0;
+    }
+  }
+  div.dj-message-content{
+    // display: flex;
+    white-space: pre-line;
+    word-break: break-all;
+  }
+  &#dj-message-info, .info{
+    background-color: @infoBackground;
+    border-color:@infoBorder;
+    color: @infoColor;
+    div.dj-message-content{
+      color: @fontColor;
+    }
+  }
+  &#dj-message-warning, .warning{
+    background-color: @warnBackground;
+    border-color:@warnBorder;
+    color: @warnColor;
+  }
+
+  &#dj-message-error, .error{
+    background-color: @errorBackground;
+    border-color:@errorBorder;
+    color: @errorColor;
+  }
+
+  &#dj-message-success, .success{
+    background-color: @successBackground;
+    border-color:@successBorder;
+    color: @successColor;
+  }
+  .dj-message-in{
+    width: 350px;
+    padding: 11px 35px 11px 16px;
+    overflow: hidden;
+    border:none;
+    transition: all .3s;
+    // color: #606266;
+    animation-name: msgFadeIn;
+    -webkit-animation-name: msgFadeIn;
+    animation-duration: .6s;
+    -webkit-animation-duration: .6s;
+  }
+}
+
+@keyframes msgFadeInDown {
+	0% {
+    opacity: 0;
+    // top: 0px;
+		-webkit-transform: translate3d(0,-100%,0);
+		transform: translate3d(0,-100%,0)
+	}
+
+	to {
+		opacity: 1;
+    // top: 10px;
+		-webkit-transform: none;
+		transform: none
+	}
+}
+
+// .dj-message-in{
+//     width:276px;
+//     padding: 12px 20px;
+//     overflow: hidden;
+//     border:none;
+//     // color: #606266;
+//     animation-name: msgFadeIn;
+//   -webkit-animation-name: msgFadeIn;
+//   animation-duration: .6s;
+//   -webkit-animation-duration: .6s;
+// }
+@keyframes msgFadeIn{
+  0%{
+    opacity:0
+  }
+  100%{
+    opacity:1
+  }
+}

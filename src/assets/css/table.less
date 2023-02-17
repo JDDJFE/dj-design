@@ -1,0 +1,388 @@
+ .dj-table{
+    width: 100%;
+    //border-radius: @radiusBase;
+
+    .iconfont.add{
+      line-height: 20px;
+    }
+    .iconfont.subtract{
+      line-height: 20px;
+    }
+
+    &.loaded .loading {
+      z-index: 78;
+    }
+
+    .nowrap {
+      table {
+        white-space: nowrap;
+        tr th {
+          .cell {
+            overflow: hidden;
+            word-break: normal;
+          }
+        }
+        tr td {
+          .cell {
+            overflow: hidden;
+            word-break: break-all;
+          }
+        }
+      }
+    }
+    // table 样式
+    table {
+        width: 100%;
+        border: @borderBase;
+        //border-radius: @radiusBase;
+        box-shadow: none;
+        border-collapse: separate;
+        border-spacing: 0;
+        box-sizing: border-box;
+
+        // 设置表头背景色
+        thead tr:first-child th {
+          background: @infoBackground;
+          padding: 14px 14px 14px;
+          font-size: @fontSizeBase;
+          font-family: PingFangSC-Medium, PingFang SC;
+          font-weight: 500;
+          color: @fontColor;
+          //line-height: 20px;
+
+          &:first-child {
+            //border-top-left-radius: @radiusBase;
+          }
+          &:last-child {
+            //border-top-right-radius: @radiusBase;
+          }
+        }
+
+        // 设置表脚背景色
+        // tfoot tr:last-child th {
+        //   border-top: @borderBase;
+        //   background: @infoBackground;
+
+        //   &:first-child {
+        //     border-bottom-left-radius: @radiusBase;
+        //   }
+        //   &:last-child {
+        //     border-bottom-right-radius: @radiusBase;
+        //   }
+        // }
+
+        tr th {
+          user-select: none;
+
+          .cell {
+            display: inline-flex;
+            align-items: center;
+            word-break: break-all;
+          }
+          &.word-break {
+            .cell {
+              white-space: normal;
+              word-break: break-all;
+            }
+          }
+          &.dj-table-column-has-sort {
+            cursor: pointer;
+
+            .dj-table-column-sort {
+              margin-left: 5px;
+              display: inline-block;
+              vertical-align: middle;
+              width: 1em;
+              font-size: 0px;
+              float: right;
+              color: @infoColor;
+              .turning-bottom {
+                margin-top: -0.5em;
+                float: left;
+              }
+            }
+          }
+        }
+
+        tr td{
+          border-top: @borderBase;
+          text-overflow: ellipsis;
+          vertical-align: middle;
+          position: relative;
+          text-align: left;
+          font-size: @fontSizeBase;
+          font-family: PingFangSC-Regular, PingFang SC;
+          font-weight: 400;
+          color: @fontColor;
+          //line-height: 20px;
+          padding: 14px 14px;
+
+          .cell {
+            display: inline-flex;
+            align-items: center;
+            word-break: break-all;
+          }
+
+          &.word-break {
+            .cell {
+              white-space: normal;
+              word-break: break-all;
+            }
+          }
+
+          .iconfont {
+            font-size: 16px;
+            color: @iconColor;
+            &.drag {
+              font-size: 14px;
+            }
+          }
+
+          .indent {
+            width: 25px;
+            display: inline-block;
+          }
+        }
+
+        tr th, tr td {
+          border-left: @borderBase;
+          box-shadow: none;
+          box-sizing: inherit;
+          background-color: @white;
+          text-align: left;
+
+          &:first-child {
+            border-left: none;
+          }
+        }
+
+        tbody tr:last-child {
+          td:first-child {
+            //border-bottom-left-radius: @radiusBase;
+          }
+          td:last-child {
+            //border-bottom-right-radius: @radiusBase;
+          }
+        }
+
+        tbody tr:hover td {
+          background-color: @formHoverBackground;
+        }
+
+        .striped {
+          td {
+            background: @infoBackground;
+          }
+        }
+
+      tbody tr.expand td {
+        background: @infoBackground;
+        padding: 12px 0 12px 78px;
+        font-size: 14px;
+        font-family: PingFangSC-Regular, PingFang SC;
+        font-weight: 400;
+        color: @textColor;
+        line-height: 24px;
+      }
+        //tbody tr.expand:hover td {
+        //  background-color: inherit;
+        //}
+
+        tr, tr td {
+          &.success, &.success td {
+            background-color: @hoverBackground;
+          }
+          &.info, &.info td {
+            background-color: @infoBackground;
+          }
+          &.warn, &.warn td {
+            background-color: @warnBackground;
+          }
+          &.error, &.error td {
+            background-color: @errorBackground;
+          }
+        }
+
+        .selection-row {
+          cursor: pointer;
+        }
+    }
+
+    &.dj-table-border{
+      tr th, tr td {
+        border-left: none;
+      }
+    }
+
+    &.pagination {
+
+      .pagination-panel {
+        display: inline-block;
+      }
+
+      table {
+        border-bottom-left-radius: 0;
+        border-bottom-right-radius: 0;
+      }
+
+      .dj-table-panel {
+        &.fixed {
+          border-bottom-left-radius: 0;
+          border-bottom-right-radius: 0;
+        }
+      }
+
+      .table-tfoot {
+        table {
+          //border-radius: @radiusBase;
+          border-top-left-radius: 0;
+          border-top-right-radius: 0;
+          border-top: 0;
+
+          tbody tr:last-child {
+            td:first-child {
+              border-bottom-left-radius: 0;
+            }
+            td:last-child {
+              border-bottom-right-radius: 0;
+            }
+          }
+        }
+
+        tfoot tr:last-child th {
+          background: @infoBackground;
+          //border-radius: @radiusBase;
+          padding: 12px 15px 12px 0;
+
+          &:first-child {
+            //border-top-left-radius: @radiusBase;
+          }
+          &:last-child {
+            //border-top-right-radius: @radiusBase;
+          }
+        }
+      }
+
+      &.empty .table-empty {
+        border-bottom-left-radius: 0;
+        border-bottom-right-radius: 0;
+      }
+    }
+
+    .dj-table-panel {
+
+      // 固定头部
+      &.fixed {
+        width: 100%;
+        position: relative;
+        overflow: auto;
+        border: @borderBase;
+        //border-radius: @radiusBase;
+
+        table {
+          table-layout: fixed;
+          border: 0;
+          border-radius: 0;
+
+          tr:first-child th {
+            border-bottom: @borderBase;
+            border-top: 0px;
+          }
+          tr:first-child td {
+            border-top: 0px;
+          }
+        }
+
+        .fixed-header {
+          position: sticky;
+          top: 0;
+          // left: 0;
+          width: 100%;
+          background-color: rgba(255, 255, 255, 1);
+          word-break: keep-all;
+          z-index: 2;
+        }
+
+        .fixed-left {
+          position: sticky;
+          z-index: 1;
+
+          &.last::after {
+            content: '';
+            width: 10px;
+            height: 100%;
+            position: absolute;
+            right: -10px;
+            top: 0px;
+            -webkit-box-shadow: inset 10px 0 8px -8px rgba(0,0,0,.15);
+            box-shadow: inset 10px 0 8px -8px rgba(0,0,0,.15);
+          }
+        }
+
+        .fixed-right {
+          position: sticky;
+          z-index: 1;
+
+          &.last::after {
+            content: '';
+            width: 10px;
+            height: 100%;
+            position: absolute;
+            left: -10px;
+            top: 0px;
+            -webkit-box-shadow: inset -10px 0 8px -8px rgba(0,0,0,.15);
+            box-shadow: inset -10px 0 8px -8px rgba(0,0,0,.15);
+          }
+        }
+      }
+    }
+
+    &.empty {
+      .dj-table-panel.fixed, .fixed table, table {
+        border-bottom-left-radius: 0;
+        border-bottom-right-radius: 0;
+
+         tr:first-child th {
+            border-bottom: 0;
+          }
+      }
+
+      .table-empty {
+        width: 100%;
+        border: @borderBase;
+        border-top: 0px;
+        //border-radius: @radiusBase;
+        border-top-left-radius: 0;
+        border-top-right-radius: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 120px;
+        padding-top: 20px;
+
+        .empty-img {
+          text-align: center;
+        }
+
+        .empty-desc {
+          text-align: center;
+          color: @textColor;
+          font-size: 12px;
+          font-family: PingFangSC-Regular, PingFang SC;
+          font-weight: 400;
+          line-height: 17px;
+          margin-top: 6px;
+          margin-bottom: 20px;
+        }
+      }
+    }
+  }
+
+ .treeBtn {
+   display: inline-block;
+   height: 16px;
+   margin-right: 16px
+ }
+ .iconfont.drag{
+   color: @iconColor;
+ }

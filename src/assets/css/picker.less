@@ -1,0 +1,554 @@
+.dj-date-picker, .dj-time-picker{
+  display: inline-block;
+  cursor: pointer;
+  color: @textColor;
+  &[type="date"]{
+    width: 140px;
+  }
+  &[type="datetime"]{
+    width: 200px;
+  }
+  &[type="daterange"]{
+    width: 260px;
+  }
+  &[type="datetimerange"]{
+    width: 400px;
+  }
+}
+// .dj-picker-input:not(.dj-date-disabled):not(.dj-date-focus):hover{
+//   border-color: @formHoverBorder;
+// }
+
+
+
+.dj-date-picker-header{
+  height: 40px;
+  border-bottom: 1px solid @shallowBorder;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 18px;
+  .dj-date-picker-icon{
+    display: inherit;
+    min-width: 20px;
+  }
+  .data-head-label{
+    span{
+      margin: @spacing;
+      color: @fontColor;
+    }
+  }
+  .iconfont{
+    color: @fontColor;
+    cursor: pointer;
+    font-size: 16px;
+  }
+}
+.dj-picker-down{
+  overflow: hidden;
+  padding: 5px 0;
+  .dj-picker-down_left,.dj-picker-down_right{
+    float:left;
+    // padding:0 10px;
+  }
+}
+.dj-date-picker{
+  .dj-picker-down {
+    padding: 0;
+  }
+}
+.dj-date-picker .dj-date-picker-content{
+  padding:12px 10px 12px 18px;
+}
+
+
+.dj-date-picker-cell_range{
+  position: relative;
+  em{
+    position: relative;
+    z-index: 1;
+  }
+  &:before{
+    content: '';
+    display: block;
+    background: @primaryBackground;
+    border-radius: 0;
+    border: 0;
+    position: absolute;
+    top: 1px;
+    bottom: 1px;
+    left: 0;
+    right: 0;
+  }
+  // &.dj-date-picker-cell_check{
+  //   &:before{
+  //     right: 8px;
+  //   }
+  // }
+}
+// .dj-date-picker-start-date.dj-date-picker-end-date{
+//   &:before{
+//         right: 0px;
+//       }
+// }
+.dj-date-picker {
+  .dj-date-picker-cell-date td:last-child{
+      &:before{
+        right: 8px;
+      }
+  }
+  .dj-date-picker-start-date {
+    &:before{
+        right: 0px;
+      }
+  }
+  .dj-date-picker-end-date {
+    &:before{
+        right: 8px;
+      }
+  }
+
+}
+// .dj-date-picker-cell_range.dj-date-picker-cell_check:nth-child(1){
+//   background: red;
+// }
+
+.dj-zoom-in-top-enter-active,.dj-zoom-in-top-leave-active{
+  opacity:1;
+  -webkit-transform:scaleY(1);
+  transform:scaleY(1);
+  -webkit-transition:opacity .3s cubic-bezier(.23,1,.32,1),-webkit-transform .3s cubic-bezier(.23,1,.32,1);transition:opacity .3s cubic-bezier(.23,1,.32,1),-webkit-transform .3s cubic-bezier(.23,1,.32,1);transition:transform .3s cubic-bezier(.23,1,.32,1),opacity .3s cubic-bezier(.23,1,.32,1);transition:transform .3s cubic-bezier(.23,1,.32,1),opacity .3s cubic-bezier(.23,1,.32,1),-webkit-transform .3s cubic-bezier(.23,1,.32,1);
+  -webkit-transform-origin:center top;
+  transform-origin:center top
+}
+.dj-zoom-in-top-enter,.dj-zoom-in-top-leave-active{
+  opacity:0;-webkit-transform:scaleY(0);
+  transform:scaleY(0)
+}
+
+.dj-date-picker_rangeinput{
+  padding: 6px 8px;
+  border-bottom:1px solid @shallowBorder;
+  display: flex;
+  justify-content: space-between;
+  .dj-date-picker_timeinput{
+    position: relative;
+  }
+  .dj-date-picker_icon{
+    font-size: 16px;
+    vertical-align: middle;
+    display: table-cell;
+    color: @fontColor;
+    margin-top: 8px;
+  }
+  .dj-date-picker_transition{
+    border: @borderBase;
+    background-color: @white;
+    box-shadow: @shadowBase;
+    border-radius: 2px;
+    position: absolute;
+    // width: 170px;
+    right: 0;
+    // z-index: 1000;
+  }
+}
+
+
+.dj-time-picker-inner{
+  overflow: hidden;
+  width: max-content;
+  .dj-time-picker_list{
+    width: 56px;
+    max-height: 144px;
+    float: left;
+    overflow: hidden;
+    border-left: 1px solid @shallowBorder;
+    position: relative;
+    &:first-child{
+      border:none;
+    }
+    &:hover {
+        overflow-y: auto;
+    }
+    ul{
+      width: 100%;
+      margin: 0;
+      padding: 0 0 120px 0;
+      list-style: none;
+      li{
+        width: 100%;
+        height: 32px;
+        line-height: 32px;
+        margin: 0;
+        padding: 0 0 0 16px;
+        box-sizing: content-box;
+        text-align: left;
+        user-select: none;
+        cursor: pointer;
+        list-style: none;
+        color: @textColor;
+        transition: all 0.2s ease-in-out;
+        &.dj-time-picker-cell_disabled,&.dj-time-picker-cell_section{
+          color: @disableColor;
+          cursor: not-allowed;
+        }
+        &.dj-time-picker-cell_check{
+          background: @otherBackground;
+          color: @fontColor;
+          font-weight: 600;
+        }
+        &:not(.dj-time-picker-cell_check):hover{
+          background: @primaryBackground;
+        }
+      }
+    }
+  }
+}
+
+.dj-picker-input {
+  display: inline-flex;
+  align-items: center;
+  // justify-content: space-between;
+  cursor: pointer;
+  padding: @spacingForm;
+  width: 100%;
+  -webkit-appearance: none;
+  background-color: @white;
+  background-image: none;
+  border-radius: @radiusBase;
+  border: @borderBase;
+  box-sizing: border-box;
+  color: @textColor;
+  // display: inline-block;
+  font-size: inherit;
+  height: @defaultHeight;
+  // line-height: 40px;
+  outline: none;
+  // padding: 0 15px;
+  transition: border-color .2s cubic-bezier(.645,.045,.355,1);
+  position: relative;
+  // display: inline-block;
+  text-align: left;
+  // &:not(.dj-date-disabled):not(.dj-date-focus):hover{
+  //   border-color: @formHoverBorder;
+  // }
+  &:not(.dj-date-disabled):not(.dj-date-focus):hover{
+    border-color: @formHoverBorder;
+  }
+  .iconfont.calendar,.iconfont.time{
+    padding-right: 10px;
+    display: flex;
+    align-items: center;
+    width: 26px;
+    color: @iconColor;
+  }
+  .iconfont.calendar{
+    font-size: 16px;
+  }
+  .iconfont.time{
+    font-size: 16px;
+  }
+  .dj-date-range-input{
+    font-size: 14px;
+  }
+  &.dj-date-size-large{
+    height: @largeHeight;
+  }
+  &.dj-date-size-small{
+    height: @smallHeight;
+    .dj-date-range-input{
+      font-size: 12px;
+    }
+  }
+  &.dj-date-size-mini{
+    height: @miniHeight;
+    .dj-date-range-input{
+      font-size: 12px;
+    }
+  }
+  .dj-date-range-inputcon{
+    width: 100%;
+    align-items: center;
+    display: flex;
+    // justify-content: space-around;
+    .dj-date-range-input {
+      cursor: pointer;
+      appearance: none;
+      border: none;
+      outline: none;
+      display: inline-block;
+      height: 100%;
+      text-align: left;
+      margin: 0;
+      padding: 0;
+      // width: 100%;
+      color: @textColor;
+
+    // border:1px solid red;
+    }
+  }
+  .dj-date-range-icon{
+    width: 16px;
+    display: inherit;
+    margin-left: 8px;
+    .close-solid{
+      font-size: 16px;
+      color: @iconColor;
+      cursor: pointer;
+    }
+  }
+  
+  &.dj-date-focus {
+    border-color: @focusBorderColor;
+    background: @white;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+  }
+  &.dj-date-range .dj-date-range-inputcon .dj-date-range-input{
+    // text-align: center;
+  }
+  &.dj-date-disabled{
+    background: @disableBackground;
+    border-color: @disableBorder;
+    cursor: not-allowed;
+    & .dj-date-range-input{
+      background: @disableBackground;
+      color: @disableColor;
+      cursor: not-allowed;
+    }
+
+  }
+}
+.dj-date-picker{
+  .dj-range-separator{
+    width: 40px;
+    text-align: center;
+    color: @iconColor;
+  }
+  .dj-date-picker-warp{
+    position: relative;
+  }
+  .dj-date-picker-sidebar{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 110px;
+    box-sizing: border-box;
+    padding: 10px 0;
+    border-right: 1px solid @shallowBorder;
+    background-color: @white;
+    overflow: auto;
+    .dj-date-picker-shortcut{
+      display: block;
+      width: 100%;
+      border: 0;
+      background-color: transparent;
+      line-height: 30px;
+      font-size: 14px;
+      color: @fontColor;
+      padding-left: @spacing-12;
+      text-align: left;
+      outline: none;
+      cursor: pointer;
+      &:hover{
+        color: @focusColor;
+      }
+    }
+  }
+  .dj-date-picker-month,.dj-date-picker-year{
+    padding-right: 8px;
+    td{
+      display: inline-block;
+      width: 60px;
+      height: 25px;
+      text-align: center;
+      margin: 14px 10px;
+    }
+
+    td:nth-child(1){
+      margin-right:11px;
+    }
+    td:nth-child(2){
+      margin: 16px 11px;
+    }
+    td:nth-child(3){
+      margin-left: 11px;
+    }
+    em {
+      display: block;
+      width: 44px;
+      margin: 0 auto;
+      height: 25px;
+      line-height: 25px;
+      font-style: normal;
+      border-radius: @radius2;
+      color: @textColor;
+      text-align: center;
+      transition: all 0.2s ease-in-out;
+      cursor: pointer;
+    }
+    td em:not(.dj-date-picker-cell_check):not(.dj-date-picker-cell_disabled):hover {
+      background: @otherBackground;
+    }
+    .dj-date-picker-cell_disabled{
+      color: @disableColor;
+      background: @white;
+      cursor: not-allowed;
+      em{
+        font-weight: initial;
+      }
+    }
+    .dj-date-picker-cell_check{
+      color: @white;
+      background-color: @primaryColor;
+    }
+  }
+  .dj-date-picker-cell{
+    .dj-date-picker-week th span{
+      width: 24px;
+      color: @fontColor;
+      font-weight: 400;
+      text-align: center;
+    }
+    span{
+      display: inline-block;
+      width: 24px;
+      height: 24px;
+      margin:3px 10px 3px 2px;
+    }
+    em {
+      display: inline-block;
+      width: 24px;
+      height: 24px;
+      line-height: 24px;
+      font-style: normal;
+      border-radius: @radius2;
+      text-align: center;
+      cursor: pointer;
+      
+    }
+    .dj-date-picker-cell-date td {
+      &:not(.dj-date-picker-cell_check):not(.dj-date-picker-cell_disabled):hover em{
+        background: @otherBackground;
+      }
+      .dj-date-picker-cell_range:before:hover{
+        // background: @;
+      }
+    }
+    // 周
+    .dj-date-picker-cell-week{
+      td:last-child span{
+        margin-right: 0;
+      }
+      td:last-child div{
+        width: 28px;
+      }
+      &.is-active{
+        // td{color: @white;}
+        .dj-date-picker-week_disabled{
+          color: @disableColor;
+        }
+        td div,&:hover div{
+          background: @primaryBackground;
+        }
+      }
+
+      &:hover td div{
+        background: @otherBackground;
+        cursor: pointer;
+      }
+    }
+    // .dj-date-picker-cell-date .dj-date-picker-cell_disabled{
+    //   color: @disableColor;
+    //   cursor: not-allowed;
+    // }
+    .dj-date-picker-cell_today{
+      em{
+        box-shadow: 0 0 0 1px @primaryColor inset;
+        color: @primaryColor;
+      }
+    }
+    .dj-date-picker-cell-date{
+      td{
+        cursor: pointer;
+      }
+      em{
+        transition: all 0.2s ease-in-out;
+      }
+      .dj-date-picker-cell_disabled,.dj-date-picker-week_disabled{
+        &:hover em{
+          background: @white;
+          cursor: not-allowed;
+        }
+      }
+      .dj-date-picker-cell_check{
+        em{
+          color: @white;
+          background-color: @primaryColor;
+        }
+      }
+    }
+    .dj-date-picker-cell-date  .dj-date-picker-cell_disabled{
+      cursor: not-allowed;
+      em{
+        font-weight: inherit;
+      }
+    }
+    .dj-date-picker-cell_disabled,.dj-date-picker-week_disabled{
+      color: @disableColor;
+      cursor: not-allowed;
+      em, &{
+        cursor: not-allowed;
+      }
+    }
+  }
+  .dj-date-picker-foot{
+    padding: 5px 2px;
+    border-top: 1px solid @shallowBorder;
+    display: flex;
+    height: 40px;
+    justify-content: space-between;
+    .dj-button{
+      margin:0 10px;
+    }
+  }
+}
+
+/*--------------------
+              Error
+      ---------------------*/
+
+.error{
+    input:-ms-input-placeholder {
+        color: @errorColor;
+    }/* Internet Explorer 10+ */
+
+    input::-webkit-input-placeholder {
+        color: @errorColor;
+    }/* WebKit browsers */
+
+    input::-moz-placeholder {
+        color: @errorColor;
+    }/* Mozilla Firefox 4 to 18 */
+
+    input:-moz-placeholder {
+        color: @errorColor;
+    }/* Mozilla Firefox 19+ */
+  & .dj-picker-input{
+    border-color: @errorBorder;
+    color: @errorColor;
+    background-color: @errorBackground;
+    & .dj-date-range-input{
+      background-color: @errorBackground;
+      color: @errorColor;
+    }
+    .dj-date-range-icon,.dj-range-separator{
+      .iconfont{
+        color: @errorColor;
+      }
+    }
+    &:not(.dj-date-disabled):not(.dj-date-focus):hover{
+      border-color: @errorBorder;
+    }
+  }
+}

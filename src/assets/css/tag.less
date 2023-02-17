@@ -1,0 +1,262 @@
+.dj-tag {
+  position: relative;
+  overflow: hidden;
+  display: inline-block;
+  height: 32px;
+  padding: 0 10px;
+  line-height: 30px;
+  font-size: 14px;
+  border-radius: @radius2;
+  box-sizing: border-box;
+  white-space: nowrap;
+  background: @defaultBackground;
+  border: 1px solid @defaultBackground;
+  color: @fontColor;
+  cursor: default;
+  transition: all .3s ease;
+  vertical-align: middle;
+
+  &:not(.dj-tag-theme,.dj-tag-has-color) {
+    .dj-tag-icon, .dj-tag-close {
+      color: @iconColor;
+    }
+  }
+
+  &.dj-tag-theme, &.dj-tag-has-color {
+    &:not(.dj-tag-dark) {
+      .dj-tag-icon, .dj-tag-close {
+        opacity: .6;
+      }
+    }
+  }
+
+  &.dj-tag-dark {
+    .dj-tag-icon, .dj-tag-close {
+      color: @white;
+    }
+  }
+
+  &.dj-tag-circular {
+    border-radius: 16px;
+    padding: 0 12px;
+  }
+
+  //&.dj-tag-has-color {
+  //  border-color: unset;
+  //}
+
+  &.dj-tag-checkable {
+    background-color: transparent;
+    border-color: transparent;
+    cursor: pointer;
+    color: @fontColor;
+
+    &.dj-tag-checkable-checked {
+      background-color: @primaryColor;
+      color: @white;
+    }
+  }
+
+  &.dj-tag-checkable:active {
+    color: @white;
+  }
+
+  a {
+    color: @fontColor;
+    font-size: 12px;
+  }
+
+  .dj-tag-close, .dj-tag-icon {
+    display: inline-block;
+    position: relative;
+    /*vertical-align: middle;
+    height: 16px;
+    width: 16px;
+    line-height: 16px;*/
+    vertical-align: top;
+    line-height: unset;
+  }
+
+  .dj-tag-close {
+    border-radius: 50%;
+    text-align: center;
+    cursor: pointer;
+    font-size: 12px;
+    /*top: -1px;*/
+    right: -3px;
+    margin-left: 5px;
+  }
+
+  .dj-tag-icon {
+    font-size: 16px;
+    /*top: -2px;*/
+    right: 2px;
+    margin-right: 3px;
+  }
+}
+
+.dj-tag-success:not(.dj-tag-has-color) {
+  color: @successColor;
+  background-color: @successBackground;
+  border-color: @successBorder;
+
+  &.dj-tag-dark {
+    background-color: @successColor;
+    border-color: @successColor;
+    color: @white;
+  }
+
+  &.dj-tag-plain {
+    background-color: @white;
+    border-color: @successColor;
+    color: @successColor;
+  }
+}
+
+.dj-tag-processing:not(.dj-tag-has-color) {
+  color: @primaryColor;
+  background-color: @primaryBackground;
+  border-color: @primaryBorder;
+
+  &.dj-tag-dark {
+    background-color: @primaryColor;
+    border-color: @primaryColor;
+    color: @white;
+  }
+
+  &.dj-tag-plain {
+    background-color: @white;
+    border-color: @primaryColor;
+    color: @primaryColor;
+  }
+}
+
+.dj-tag-error:not(.dj-tag-has-color) {
+  color: @dangerColor;
+  background-color: @dangerBackground;
+  border-color: @dangerBorder;
+
+  &.dj-tag-dark {
+    background-color: @dangerColor;
+    border-color: @dangerColor;
+    color: @white;
+  }
+
+  &.dj-tag-plain {
+    background-color: @white;
+    border-color: @dangerColor;
+    color: @dangerColor;
+  }
+}
+
+.dj-tag-warning:not(.dj-tag-has-color) {
+  color: @warnColor;
+  background-color: @warnBackground;
+  border-color: @warnBorder;
+
+  &.dj-tag-dark {
+    background-color: @warnColor;
+    border-color: @warnColor;
+    color: @white;
+  }
+
+  &.dj-tag-plain {
+    background-color: @white;
+    border-color: @warnColor;
+    color: @warnColor;
+  }
+}
+
+.dj-tag-default:not(.dj-tag-has-color) {
+  background-color: @infoBackground;
+  border-color: @infoColor;
+  color: @textColor;
+
+  &.dj-tag-dark {
+    background-color: @infoColor;
+    border-color: @infoColor;
+    color: @white;
+  }
+
+  &.dj-tag-plain {
+    background-color: @white;
+    border-color: @infoColor;
+    color: @textColor;
+  }
+}
+
+.dj-tag-medium, .dj-tag-small, .dj-tag-mini {
+  font-size: 12px;
+}
+
+.dj-tag-medium {
+  height: 28px;
+  line-height: 26px;
+
+  &.dj-tag-circular {
+    border-radius: 14px;
+  }
+}
+
+.dj-tag-small {
+  height: 24px;
+  padding: 0 8px;
+  line-height: 22px;
+
+  &.dj-tag-circular {
+    border-radius: 12px;
+    padding: 0 10px;
+  }
+
+  .dj-tag-icon {
+    font-size: 14px;
+  }
+}
+
+.dj-tag-mini {
+  height: 20px;
+  padding: 0 8px;
+  line-height: 18px;
+
+  &.dj-tag-circular {
+    border-radius: 10px;
+    padding: 0 10px;
+  }
+
+  .dj-tag-icon {
+    /*transform: scale(.8);*/
+    font-size: 12px;
+    right: 0;
+  }
+
+  .dj-tag-close {
+    right: -2px;
+  }
+}
+
+.dj-tag-has-color {
+  /*&::before{
+    background: ;
+  }*/
+}
+
+.dj-tag-color-bg {
+  opacity: 0.08;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.dj-tag-color-bg-border {
+  background: rgba(0, 0, 0, 0);
+  border-radius: @radius2;
+  border: 1px solid transparent;
+  opacity: 0.2;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}

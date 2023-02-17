@@ -1,0 +1,71 @@
+
+&.error, .dj-form .error &, .dj-form.error{
+  .dj-editor{
+    .w-e-toolbar,.w-e-text-container{
+      background: @errorBackground!important;
+      border-color: (@errorBorder)!important;
+      color: (@errorColor)!important;
+    }
+    .w-e-menu{
+      background: @errorBackground;
+    }
+  }
+}
+.dj-editor {
+  width: 100%;
+  display: inline-block;
+  vertical-align: middle;
+}
+    .dj-editor .w-e-text-container {
+      border-color: @borderColor  ;
+      border-bottom-right-radius: @radiusBase;
+      border-bottom-left-radius: @radiusBase;
+      color: @fontColor;
+    }
+  
+    .dj-editor .w-e-text-container a {
+      color: @primaryColor;
+    }
+  
+    .dj-editor .w-e-toolbar {
+      border-color: @borderColor  ;
+      border-bottom-color: #eee ;
+      border-top-right-radius: @radiusBase;
+      border-top-left-radius: @radiusBase;
+    }
+  
+    .dj-editor.dj-editor-disabled .w-e-text-container {
+      background-color: @disableBackground  ;
+      border-color: @disableBorder  ;
+      cursor: not-allowed;
+      color: @disableColor;
+    }
+  
+    .dj-editor.dj-editor-disabled .w-e-text-container a {
+      color: @primaryBorder;
+    }
+  
+    .dj-editor.dj-editor-disabled .w-e-toolbar {
+      background-color: @disableBackground  !important;
+      border-color: @disableBorder  !important;
+      border-bottom-color: #eee !important;
+      cursor: not-allowed;
+    }
+  
+    .dj-editor .w-e-text {
+  
+      ul,
+      ol {
+        margin: 10px 0 10px 20px;
+      }
+  
+      ol li {
+        list-style-type: inherit;
+        font-size: initial;
+      }
+  
+      ul li {
+        list-style-type: disc;
+        font-size: initial;
+      }
+    }
